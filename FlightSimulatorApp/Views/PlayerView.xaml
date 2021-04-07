@@ -9,25 +9,25 @@
              d:DesignHeight="200" Width="756.5" Height="107.4">
     <StackPanel Background="White" ScrollViewer.CanContentScroll="True" Margin="0,4,0,-5" >
         <StackPanel Orientation="Horizontal" Margin="305,10,308,0" Height="43">
-            <Button x:Name="fgButton" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="5" Click="fgButton_Click" >
+            <Button x:Name="fgButton" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="5" Click="fgButton_Click" ToolTip="Open Simulator" >
                 <iconPacks:PackIconFontAwesome BorderThickness="0" Kind="PaperPlaneRegular" Height="15" Width="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0" Padding="0,0,2,0"/>
             </Button>
-            <Button x:Name="playButton" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="5" Click="playButton_Click">
+            <Button x:Name="playButton" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="5" Click="playButton_Click" ToolTip="Play">
                 <iconPacks:PackIconBootstrapIcons BorderThickness="0" Kind="Play" Height="15" Width="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
             </Button>
-            <Button x:Name="pauseButton" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="5" Click="pauseButton_Click">
+            <Button x:Name="pauseButton" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="5" Click="pauseButton_Click" ToolTip="Pause">
                 <iconPacks:PackIconBootstrapIcons BorderThickness="0" Kind="Pause" Height="15" Width="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
             </Button>
         </StackPanel>
         <DockPanel VerticalAlignment="Stretch" Margin="59,0,71,0" HorizontalAlignment="Stretch" Height="28">
-            <ComboBox DockPanel.Dock="Right" Text="Rate" UseLayoutRounding="True" x:Name="Rate_dropdown" FontStretch="Expanded" Panel.ZIndex="7" Width="52" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsReadOnly="True" Margin="5,0,0,0" SelectionChanged="Rate_dropdown_SelectionChanged">
+            <ComboBox DockPanel.Dock="Right" Text="Rate" UseLayoutRounding="True" x:Name="Rate_dropdown" FontStretch="Expanded" Panel.ZIndex="7" Width="52" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsReadOnly="True" Margin="5,0,0,0" SelectionChanged="Rate_dropdown_SelectionChanged" ToolTip="Change Rate">
                 <ComboBoxItem Content="0.5" VerticalAlignment="Center" HorizontalAlignment="Center" />
                 <ComboBoxItem Content="1.0" HorizontalAlignment="Center" VerticalAlignment="Center" IsSelected="True" />
                 <ComboBoxItem Content="1.5" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <ComboBoxItem Content="2.0" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </ComboBox>
             <Label Content="{Binding VM_timedisplay}" x:Name="Box_Timestep"   Width="76" DockPanel.Dock="Right" Panel.ZIndex="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="7.3,1,0,1" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Slider Value="{Binding VM_timestep}" Maximum="200" TickFrequency="1" IsSnapToTickEnabled="True" x:Name="Slider_Timestep" Width="542" ValueChanged="Slider_Timestep_ValueChanged" />
+            <Slider Value="{Binding VM_timestep}" Maximum="{Binding VM_timeSimulator}" TickFrequency="1" IsSnapToTickEnabled="True" x:Name="Slider_Timestep" Width="542" ValueChanged="Slider_Timestep_ValueChanged" />
 
         </DockPanel>
 

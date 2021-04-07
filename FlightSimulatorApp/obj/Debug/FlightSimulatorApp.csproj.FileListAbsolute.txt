@@ -124,3 +124,4 @@ C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\OxyP
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\OxyPlot.Wpf.dll
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\OxyPlot.xml
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.csprojAssemblyReference.cache

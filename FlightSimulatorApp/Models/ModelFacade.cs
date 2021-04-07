@@ -9,6 +9,8 @@ namespace FlightSimulatorApp.Models
 {
     public partial class ModelFacade : IModel 
     {
+        private csvParser parser;
+
         // Notify
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propertyName)
@@ -39,6 +41,13 @@ namespace FlightSimulatorApp.Models
             EndFacade_1();
             EndFacade_2();
             EndFacade_3();
+        }
+
+        public void setCSVPath(string path)
+        {
+            parser = new csvParser(path);
+            parser.scanCsv();
+            this.NotifyPropertyChanged("timeSimulator");
         }
 
     }

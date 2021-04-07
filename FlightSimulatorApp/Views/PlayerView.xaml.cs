@@ -19,6 +19,7 @@ using System.Diagnostics;
 using System.Threading;
 using ControlzEx.Standard;
 using System.Windows.Interop;
+using System.Runtime.InteropServices;
 
 namespace FlightSimulatorApp.Views
 {
@@ -27,13 +28,15 @@ namespace FlightSimulatorApp.Views
     /// </summary>
     public partial class PlayerView : UserControl
     {
-        private Process fgProcess; // FG process id.
+        private FG fg; // FG object.
+        private Boolean soundOn = true;
         private ViewModelPlayer vm;
         public PlayerView()
         {
             InitializeComponent();
             this.vm = new ViewModelPlayer(MainWindow.getModel());
             this.DataContext = this.vm;
+            this.fg = new FG();
 
             App.Current.Exit += delegate (object sender, ExitEventArgs e)
             {
@@ -44,11 +47,21 @@ namespace FlightSimulatorApp.Views
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
             vm.play();
+            if (!soundOn)
+            {
+                fg.soundHandle();
+                soundOn = true;
+            }
         }
 
         private void pauseButton_Click(object sender, RoutedEventArgs e)
         {
             vm.pause();
+            if (soundOn)
+            {
+                fg.soundHandle();
+                soundOn = false;
+            }
         }
 
         private void Rate_dropdown_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -83,42 +96,14 @@ namespace FlightSimulatorApp.Views
         public void close()
         {
             vm.close();
-            if (this.fgProcess != null && !fgProcess.HasExited) // FG process still running.
-            {
-                this.fgProcess.CloseMainWindow(); // stops FG process.
-                this.fgProcess.Close(); // clear all used resources.
-            }
+            fg.close();
         }
 
         private void fgButton_Click(object sender, RoutedEventArgs e)
         {
-            this.fgProcess = new Process(); // create a new Process.
-            this.fgProcess.StartInfo.RedirectStandardOutput = true;
-            this.fgProcess.StartInfo.UseShellExecute = false;
-            this.fgProcess.StartInfo.CreateNoWindow = true;
-
-            this.fgProcess.StartInfo.WorkingDirectory = "C:\\Program Files\\FlightGear 2020.3.6\\data"; // set working directory for FG.
-            this.fgProcess.StartInfo.FileName = "c:\\program files\\flightgear 2020.3.6\\bin\\fgfs.exe"; // set process to open FG.
-            this.fgProcess.StartInfo.Arguments = "--httpd=8080 --generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null"; // set FG to listen on port 5400.
-            ThreadStart fgThs = new ThreadStart(() => this.fgProcess.Start()); // set thread to start process.
-            Thread fgThread = new Thread(fgThs);
-            fgThread.Start(); // execute thread and start FG as another process.  
-            //dockFG();
-        }
-
-        private void dockFG()
-        {
-            Thread.Sleep(500);
-            IntPtr hWndInsertAfter = new IntPtr(-1); //HWND_TOPMOST (HWND) - 1
-            NativeMethods.SetWindowPos(fgProcess.MainWindowHandle, hWndInsertAfter, 0, 0, Convert.ToInt32(Window.GetWindow(this).Width), Convert.ToInt32(Window.GetWindow(this).Height), 0);
-            IntPtr windowHandle = new WindowInteropHelper(Window.GetWindow(this)).Handle;
-            NativeMethods.SetParent(fgProcess.MainWindowHandle, windowHandle);
-
-            NativeMethods.SetWindowLongPtr(fgProcess.MainWindowHandle, (GWL)(int)GWL.STYLE,
-                NativeMethods.GetWindowLongPtr(fgProcess.MainWindowHandle, (GWL)(int)GWL.STYLE));
-
-            NativeMethods.SetWindowPos(fgProcess.MainWindowHandle, IntPtr.Zero, 0, 0, Convert.ToInt32(Window.GetWindow(this).Height) * 3, Convert.ToInt32(Window.GetWindow(this).Height) * 2, 0);
-
+            fg.start();
+            fg.dockFG(Window.GetWindow(this));
+            fgButton.IsEnabled = false;
         }
     }
 }

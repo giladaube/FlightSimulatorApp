@@ -16,7 +16,7 @@ namespace FlightSimulatorApp.Models
         partial void StartFacade_1()
         {
             // add ModelPlayer and set it's Notify funcions.
-            player = new ModelPlayer("localhost", 5400, 0);
+            player = new ModelPlayer("localhost", 5400, 0, parser.rowsList);
             player.PropertyChanged +=
                     delegate (Object sender, PropertyChangedEventArgs e)
                     {
@@ -53,6 +53,12 @@ namespace FlightSimulatorApp.Models
                 return String.Format("{0:00}:{1:00}:{2:00}", hh, mm, ss);
             }
         }
+
+        public int TimeSimulator
+        {
+            get { return (parser.numOfRows / 10); }
+        }
+
 
         // ModelPlayer commands
         public void changeRate(double rate)

@@ -59,7 +59,7 @@ namespace FlightSimulatorApp.Models
         private List<string> csvRows;
 
         // Constructor
-        public ModelPlayer(string server, Int32 port, int linestep)
+        public ModelPlayer(string server, Int32 port, int linestep, List<string> rowsList)
         {
             this.client = new Client(); // use to transfer data to server via TCP.
 
@@ -67,8 +67,8 @@ namespace FlightSimulatorApp.Models
             this.milliseconds = 100; // sends row in intervals of 'milliseconds'.
             this.stop = true;
 
-            this.csvRows = new List<string>();
-            scanCsv();
+            this.csvRows = rowsList;
+            //scanCsv();
 
             // this is the only access to start function.
             start(server, port); // connect client and initiate background process to send data.

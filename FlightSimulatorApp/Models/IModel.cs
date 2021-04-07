@@ -13,9 +13,11 @@ namespace FlightSimulatorApp.Models
 
         double Timestep { set; get; }
         string Timedisplay { get; }
+        int TimeSimulator { get; }
 
         // Model COMMANDS
         void end(); // End Simulator
+        void setCSVPath(string path);
 
         // ModelPlayer commands
         void changeRate(double rate);

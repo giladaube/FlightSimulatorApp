@@ -169,6 +169,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FG.cs" />
+    <Compile Include="Models\csvParser.cs" />
     <Compile Include="Models\ModelFacade_3.cs" />
     <Compile Include="Models\ModelFacade_2.cs" />
     <Compile Include="Models\Client.cs" />

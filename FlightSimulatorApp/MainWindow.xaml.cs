@@ -23,6 +23,7 @@ namespace FlightSimulatorApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        // when user enter a path to csv need to use:: setCSVPath(string path); in IModel
         private static IModel model = new ModelFacade();
         public MainWindow()
         {
