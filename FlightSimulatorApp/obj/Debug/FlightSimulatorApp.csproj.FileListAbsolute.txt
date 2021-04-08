@@ -137,3 +137,4 @@ C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Micr
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.csprojAssemblyReference.cache

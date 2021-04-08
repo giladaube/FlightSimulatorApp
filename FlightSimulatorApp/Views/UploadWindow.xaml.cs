@@ -57,16 +57,7 @@ namespace FlightSimulatorApp.Views
                 wasCsvSelected = true;
             }
 
-            if (!Directory.Exists("C:\\Program Files\\FlightGear 2020.3.6")) // default path to FlightGear folder doesn't exists
-            {
-                // show a button to add a path (also a match note for the user)
-                btnSetFGPath.Visibility = System.Windows.Visibility.Visible;
-                FGtextBox.Text = "Sorry! We can't find the right Path to FlightGear folder. Please add it here.";
-            }
-            else
-            {
-                ContinueButton.Visibility = System.Windows.Visibility.Visible;
-            }
+
         }
 
         private void XMLFile_Button_Click(object sender, RoutedEventArgs e)
@@ -102,7 +93,8 @@ namespace FlightSimulatorApp.Views
             {
                 // Open document 
                 fgFolderPath = dlg.FileName;
-                FGtextBox.Text = "Selected FG Path:   " + fgFolderPath;
+                MessageBox.Show("Hello!");
+                //FGtextBox.Text = "Selected FG Path:   " + fgFolderPath;
                 ContinueButton.Visibility = System.Windows.Visibility.Visible;
 
                 // set a path to FlightGear folder.
@@ -128,5 +120,31 @@ namespace FlightSimulatorApp.Views
                 Application.Current.Shutdown();
         }
 
+        private void btnWelcome_Click(object sender, RoutedEventArgs e)
+        {
+            tabContorl.SelectedIndex = 1;
+
+            if (!Directory.Exists("C:\\Program Files\\FlightGear 2020.3.6")) // default path to FlightGear folder doesn't exists
+            {
+                fgPathCheck.Visibility = System.Windows.Visibility.Visible;
+                // show a button to add a path (also a match note for the user)
+                btnSetFGPath.Visibility = System.Windows.Visibility.Visible;
+                //FGtextBox.Text = "Sorry! We can't find the right Path to FlightGear folder. Please add it here.";
+            }
+            else
+            {
+                ContinueButton.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void btnSetupBack_Click(object sender, RoutedEventArgs e)
+        {
+            tabContorl.SelectedIndex = 0;
+        }
+
+        private void btnSetupNext_Click(object sender, RoutedEventArgs e)
+        {
+            tabContorl.SelectedIndex = 2;
+        }
     }
 }
