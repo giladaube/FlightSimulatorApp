@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FlightSimulatorApp.Models
 {
@@ -31,7 +27,8 @@ namespace FlightSimulatorApp.Models
             player.end();
         }
 
-        public double Timestep // value sends from View, so it's in seconds.
+        // Represent the current run-time of the simulation, in seconds.
+        public double Timestep
         {
             get
             {
@@ -43,6 +40,7 @@ namespace FlightSimulatorApp.Models
             }
         }
 
+        // Represent the current run-time of the simulation as a string (HH:MM:SS).
         public string Timedisplay
         {
             get
@@ -54,6 +52,7 @@ namespace FlightSimulatorApp.Models
             }
         }
 
+        // Represent the total time of the simulation.
         public int TimeSimulator
         {
             get { return (parser.numOfRows / 10); }

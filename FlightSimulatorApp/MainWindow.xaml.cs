@@ -25,6 +25,27 @@ namespace FlightSimulatorApp
     {
         // when user enter a path to csv need to use:: setCSVPath(string path); in IModel
         private static IModel model = new ModelFacade();
+
+        private static string fgPath;
+        public static string FgPath
+        {
+            get { return fgPath; }
+            set
+            {
+                fgPath = value;
+            }
+        }
+
+        private static string xmlName = "playback_small";
+        public static string XmlName
+        {
+            get { return xmlName; }
+            set
+            {
+                xmlName = value;
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,5 +57,9 @@ namespace FlightSimulatorApp
             return model;
         }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

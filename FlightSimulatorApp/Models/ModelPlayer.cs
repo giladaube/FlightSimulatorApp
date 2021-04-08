@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace FlightSimulatorApp.Models
 {
@@ -16,12 +11,12 @@ namespace FlightSimulatorApp.Models
         private IClient client;
         private static Mutex mut = new Mutex();
         private Thread clientThread;
-
+        private List<string> csvRows;
         volatile Boolean stop; // volatile indicates that the field might be modified by multiple threads
 
         // PROPERTIES
 
-        // milliseconds Property
+        // define intervals between each IClient.write's call.
         private int milliseconds;
         public int Milliseconds
         {
@@ -35,7 +30,7 @@ namespace FlightSimulatorApp.Models
             }
         }
 
-        // linestep Property
+        // Represent the current csvline to write.
         private int linestep;
         public int Linestep
         {
@@ -51,12 +46,12 @@ namespace FlightSimulatorApp.Models
             }
         }
 
-        public double Timestep // value sends from View, so it's in seconds.
+        // Represent the current run-time of the simulation, in seconds.
+        public double Timestep
         {
-            get { return Convert.ToDouble(Linestep / 10); }
+            get { return Convert.ToDouble(Linestep / 10); } // covert line into seconds.
         }
 
-        private List<string> csvRows;
 
         // Constructor
         public ModelPlayer(string server, Int32 port, int linestep, List<string> rowsList)
@@ -66,25 +61,10 @@ namespace FlightSimulatorApp.Models
             this.Linestep = linestep; // sends data from 'linestep' row.
             this.milliseconds = 100; // sends row in intervals of 'milliseconds'.
             this.stop = true;
-
             this.csvRows = rowsList;
-            //scanCsv();
 
             // this is the only access to start function.
             start(server, port); // connect client and initiate background process to send data.
-        }
-
-        private void scanCsv()
-        {
-            using (StreamReader sr = new StreamReader("C:\\Users\\gilad\\Downloads\\reg_flight.csv"))
-            {
-                string currentLine;
-                // currentLine will be null when the StreamReader reaches the end of file
-                while ((currentLine = sr.ReadLine()) != null)
-                {
-                    csvRows.Add(currentLine);
-                }
-            }
         }
 
         private void start(string server, Int32 port)

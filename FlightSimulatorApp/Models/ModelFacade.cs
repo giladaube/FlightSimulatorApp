@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+
 
 namespace FlightSimulatorApp.Models
 {
@@ -31,6 +27,14 @@ namespace FlightSimulatorApp.Models
 
         public ModelFacade()
         {
+            //setCSVPath("C:\\Users\\gilad\\Downloads\\reg_flight.csv");
+            //StartFacade_1();
+            //StartFacade_2();
+            //StartFacade_3();
+        }
+
+        private void Start()
+        {
             StartFacade_1();
             StartFacade_2();
             StartFacade_3();
@@ -43,12 +47,13 @@ namespace FlightSimulatorApp.Models
             EndFacade_3();
         }
 
-        public void setCSVPath(string path)
+        public void setParserPath(string csvPath, string xmlPath)
         {
-            parser = new csvParser(path);
+            parser = new csvParser(csvPath);
+            parser.setXMLCol(xmlPath); // if xmlPath is null, parser a default XML file.
             parser.scanCsv();
+            Start();
             this.NotifyPropertyChanged("timeSimulator");
         }
-
     }
 }

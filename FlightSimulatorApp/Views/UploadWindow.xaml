@@ -1,0 +1,22 @@
+﻿<Window x:Class="FlightSimulatorApp.Views.UploadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightSimulatorApp.Views"
+        mc:Ignorable="d"
+        Title="UploadWindow" Height="450" Width="800" Closed="Window_Closed">
+    <Grid>
+        <Button Background="LightCoral" Name="btnOpenCSVFile" Click="CSVFile_Button_Click" Margin="46,55,618.6,325">Select CSV File...</Button>
+        <TextBlock Name="CSVtextBox" Margin="231,55,35.6,325" ></TextBlock>
+
+        <Button Background="LightCoral" Name="btnOpenXMLFile" Click="XMLFile_Button_Click" Margin="46,128,618.6,252">Select XML File...</Button>
+        <TextBlock Name="XMLtextBox" Margin="231,128,35.6,252" ></TextBlock>
+
+        <Button Background="LightCoral" Name="btnSetFGPath" Click="btnSetFGPath_Click" Margin="46,201,618.6,179" Visibility="Hidden">Add FG Path...</Button>
+        <TextBlock Name="FGtextBox" Margin="231,201,35.6,179" ></TextBlock>
+
+        <Button Background="Azure" Name="ContinueButton" Click="Continue_Button_Click" Margin="46,274,618.6,106" Visibility="Hidden">Continue</Button>
+
+    </Grid>
+</Window>

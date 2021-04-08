@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace FlightSimulatorApp.Models
 {
@@ -17,7 +12,7 @@ namespace FlightSimulatorApp.Models
 
         // Model COMMANDS
         void end(); // End Simulator
-        void setCSVPath(string path);
+        void setParserPath(string csvPath, string xmlPath);
 
         // ModelPlayer commands
         void changeRate(double rate);

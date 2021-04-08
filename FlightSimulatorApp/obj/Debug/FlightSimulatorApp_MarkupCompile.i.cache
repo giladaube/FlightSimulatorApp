@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\App.xaml
-2-1271473994
+4290754935
 
-19-1872577694
-55-1743745620
-MainWindow.xaml;Views\PlayerView.xaml;
+211824388862
+59136190767
+AppWindow.xaml;MainWindow.xaml;Views\PlayerView.xaml;Views\UploadWindow.xaml;
 
-False
+True
 

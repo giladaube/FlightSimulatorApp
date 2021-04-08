@@ -27,7 +27,7 @@
                 <ComboBoxItem Content="2.0" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </ComboBox>
             <Label Content="{Binding VM_timedisplay}" x:Name="Box_Timestep"   Width="76" DockPanel.Dock="Right" Panel.ZIndex="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="7.3,1,0,1" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Slider Value="{Binding VM_timestep}" Maximum="{Binding VM_timeSimulator}" TickFrequency="1" IsSnapToTickEnabled="True" x:Name="Slider_Timestep" Width="542" ValueChanged="Slider_Timestep_ValueChanged" />
+            <Slider Value="{Binding VM_timestep}" Maximum="{Binding VM_timeSimulator}" TickFrequency="1" IsSnapToTickEnabled="True" x:Name="Slider_Timestep" Width="481" ValueChanged="Slider_Timestep_ValueChanged" />
 
         </DockPanel>
 

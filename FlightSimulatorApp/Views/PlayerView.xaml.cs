@@ -102,7 +102,7 @@ namespace FlightSimulatorApp.Views
         private void fgButton_Click(object sender, RoutedEventArgs e)
         {
             fg.start();
-            fg.dockFG(Window.GetWindow(this));
+            //fg.dockFG(Window.GetWindow(this));
             fgButton.IsEnabled = false;
         }
     }

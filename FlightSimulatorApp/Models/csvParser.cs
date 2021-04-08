@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace FlightSimulatorApp.Models
 {
@@ -26,59 +28,32 @@ namespace FlightSimulatorApp.Models
             this.rowsList = new List<string>();
             this.dicAsCols = new Dictionary<string, List<float>>();
             this.dicAsRows = new Dictionary<float, List<float>>();
+            this.colNames = new List<string>();
+        }
 
-            colNames = new List<string>{"aileron",
-    "elevator",
-    "rudder",
-    "flaps",
-    "slats",
-    "speedbrake",
-    "throttle",
-    "throttle1",
-    "engine-pump",
-    "engine-pump1",
-    "electric-pump",
-    "electric-pump1",
-    "external-power",
-    "APU-generator",
-    "latitude-deg",
-    "longitude-deg",
-    "altitude-ft",
-    "roll-deg",
-    "pitch-deg",
-    "heading-deg",
-    "side-slip-deg",
-    "airspeed-kt",
-    "glideslope",
-    "vertical-speed-fps",
-    "airspeed-indicator_indicated-speed-kt",
-    "altimeter_indicated-altitude-ft",
-    "altimeter_pressure-alt-ft",
-    "attitude-indicator_indicated-pitch-deg",
-    "attitude-indicator_indicated-roll-deg",
-    "attitude-indicator_internal-pitch-deg",
-    "attitude-indicator_internal-roll-deg",
-    "encoder_indicated-altitude-ft",
-    "encoder_pressure-alt-ft",
-    "gps_indicated-altitude-ft",
-    "gps_indicated-ground-speed-kt",
-    "gps_indicated-vertical-speed",
-    "indicated-heading-deg",
-    "magnetic-compass_indicated-heading-deg",
-    "slip-skid-ball_indicated-slip-skid",
-    "turn-indicator_indicated-turn-rate",
-    "vertical-speed-indicator_indicated-speed-fpm",
-    "engine_rpm" };
+        public void setXMLCol(string path)
+        {
+            XmlDocument doc = new XmlDocument();
+            // in case no XMLPath was given, use a default XML
+            if (path != null)
+            {
+                doc.Load(path);
+            }
+            else
+            {
+                doc.LoadXml(Properties.Resources.playback_small); // default XML file
+            }
+
+            XmlNodeList elemList = doc.GetElementsByTagName("name");
+            for (int i = 0; i < elemList.Count / 2; i++)
+            {
+                colNames.Add(elemList[i].InnerXml.ToString());
+            }
         }
 
         public void scanCsv()
         {
-            // path to the csv file
-            //string path = "C:/Users/Or/Documents/Uni/SemesterD/AdvProg2/reg_flight.csv";
-
             int i = 0;
-            //if (File.Exists(path))
-            //{
             string[] lines = System.IO.File.ReadAllLines(path);
 
             // Counting rows and cols
@@ -100,7 +75,14 @@ namespace FlightSimulatorApp.Models
 
             foreach (string name in this.colNames)
             {
-                dicAsCols.Add(name, new List<float>());
+                if (dicAsCols.ContainsKey(name)) // in case of a double named column
+                {
+                    dicAsCols.Add(name + "[1]", new List<float>()); 
+                }
+                else
+                {
+                    dicAsCols.Add(name, new List<float>());
+                }
             }
 
             int rowNum = 0, colNum = 0;
@@ -124,18 +106,5 @@ namespace FlightSimulatorApp.Models
                 rowNum++;
             }
         }
-
-        //private void scan()
-        //{
-        //    using (StreamReader sr = new StreamReader(path))
-        //    {
-        //        string currentLine;
-        //        // currentLine will be null when the StreamReader reaches the end of file
-        //        while ((currentLine = sr.ReadLine()) != null)
-        //        {
-        //            rowsList.Add(currentLine);
-        //        }
-        //    }
-        //}
     }
 }

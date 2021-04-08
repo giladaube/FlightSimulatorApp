@@ -124,4 +124,16 @@ C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\OxyP
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\OxyPlot.Wpf.dll
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\OxyPlot.xml
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\OxyPlot.Wpf.xml
-C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.csprojAssemblyReference.cache
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\UploadWindow.g.cs
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\UploadWindow.baml
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\AppWindow.g.cs
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\AppWindow.baml
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
