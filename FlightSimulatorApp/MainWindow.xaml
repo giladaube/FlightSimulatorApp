@@ -52,7 +52,7 @@
             <Button x:Name="D" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" >
                 <iconPacks:PackIconFontAwesome Kind="CompassSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
             </Button>
-            <Button x:Name="E" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,20,18,0" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" >
+            <Button x:Name="E" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,20,18,0" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" Click="E_Click" >
                 <iconPacks:PackIconFontAwesome Kind="ChartLineSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
             </Button>
             <Button x:Name="btnExit" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,60,18,0" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" Click="btnExit_Click" ToolTip="Exit" >

@@ -70,11 +70,14 @@ namespace FlightSimulatorApp.Models
             // Use the file name to load the assembly into the current
             // application domain.
             this.assemblyDLL = Assembly.LoadFile(this.dllPath);
+            //this.assemblyDLL.GetName();
+            //string filename = dllPath.Split('/').Last();
+            //string ClassName = filename.Split('.').First();
 
-            //this.assemblyDLL = Assembly.LoadFile("C:/Users/Or/source/repos/linearRegression/bin/Debug/linearRegression.dll");
+            string ClassName = System.IO.Path.GetFileNameWithoutExtension(dllPath);
 
             // Get the type to use.
-            this.anomalyDetectorType = assemblyDLL.GetType("linearRegression.LinearRegression");
+            this.anomalyDetectorType = assemblyDLL.GetType(ClassName + ".Algorithm");
             // Create an instance.
             string[] args = { "C:/Users/Or/Documents/Uni/SemesterD/AdvProg2/playback_small.xml" };
             this.Detector = Activator.CreateInstance(this.anomalyDetectorType, args);

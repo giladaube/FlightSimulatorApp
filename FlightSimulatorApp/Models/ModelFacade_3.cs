@@ -19,19 +19,18 @@ namespace FlightSimulatorApp.Models
         public string SelectedGraphFeatureCorrelated { get { return graphs.SelectedGraphFeatureCorrelated; } }
         public List<DataPoint> Last300PointsOfSelectedFeature { get { return graphs.Last300PointsOfSelectedFeature; } }
         public List<DataPoint> Last300PointsOfSelectedFeatureCorrelated { get { return graphs.Last300PointsOfSelectedFeatureCorrelated; } }
+
+        public List<DataPoint> Last300PointsOfSelectedFeatureAsCorrelated { get { return graphs.Last300PointsOfSelectedFeatureAsCorrelated; } }
+
         public List<string> ColNames { get { return parser.colNames; } }
-
-
-
 
 
         // Initiate models here
         partial void StartFacade_3()
         {
-            
-            // add ModelGraphs and set its Notify funcions.
-            graphs = new ModelGraphs(slinestep, parser );
-            player.PropertyChanged +=
+            // add ModelGraphs and set its Notify functions.
+            graphs = new ModelGraphs(slinestep, parser);
+            graphs.PropertyChanged +=
                     delegate (Object sender, PropertyChangedEventArgs e)
                     {
                         NotifyPropertyChanged(e.PropertyName);
@@ -47,12 +46,14 @@ namespace FlightSimulatorApp.Models
 
         public void updateSelectedFeature(string feature)
         {
-            this.graphs.updateFeaturePoints(feature);
+            this.graphs.updateSelectedFeature(feature);
+            //this.graphs.updateFeaturePoints(feature);
         }
 
         public void setDllPath(string dllPath)
         {
             this.graphs.setDllPath(dllPath);
+            StartFacade_4();
         }
 
         public void LearnNormal()

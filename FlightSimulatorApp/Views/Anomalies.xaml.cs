@@ -46,7 +46,7 @@ namespace FlightSimulatorApp.Views
 
         private void AnomalousPointsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
     }
 }

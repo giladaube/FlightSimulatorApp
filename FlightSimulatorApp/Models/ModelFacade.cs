@@ -40,7 +40,7 @@ namespace FlightSimulatorApp.Models
             StartFacade_1();
             StartFacade_2();
             StartFacade_3();
-            StartFacade_4();
+            //StartFacade_4();
         }
 
         public void end()

@@ -40,15 +40,16 @@ namespace FlightSimulatorApp.Views
             { 
                 string feature = selectedItem.ToString();
                 vm.updateSelectedFeature(feature);
-                
             }
         }
 
         private void Graph_Window_Loaded(object sender, RoutedEventArgs e)
         {
-            vm.setGraphWindowOpened(true);
             this.vm.LearnNormal();
+            vm.setGraphWindowOpened(true);
         }
+
+
 
         private void DLL_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -72,6 +73,11 @@ namespace FlightSimulatorApp.Views
                 Anomalies AnomaliesWindow = new Anomalies();
                 AnomaliesWindow.Show();
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            vm.setGraphWindowOpened(false);
         }
     }
 }

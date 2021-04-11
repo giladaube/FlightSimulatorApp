@@ -67,5 +67,11 @@ namespace FlightSimulatorApp
             MessageBox.Show("Thank you for using our app, see you soon!");
             Window_Closed(sender, e);
         }
+
+        private void E_Click(object sender, RoutedEventArgs e)
+        {
+            Graphs graphs = new Graphs();
+            graphs.Show();
+        }
     }
 }

@@ -43,7 +43,6 @@ namespace FlightSimulatorApp.Models
         }
 
 
-
         public PlotModel AnomalyPlotModel { get { return anomalies.AnomalyPlotModel; } }
         public List<DataPoint> AnomalousPointsList { get { return anomalies.AnomalousPointsList; } }
     }

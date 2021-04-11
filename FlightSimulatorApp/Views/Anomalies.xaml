@@ -13,6 +13,6 @@
         <ListBox Name="MyListBox" ItemsSource="{Binding VM_ColNames}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="ListBox_SelectionChanged" Margin="20.6,10,701.6,141.8" Grid.Column="1" Grid.RowSpan="2"/>
 
         <oxy:PlotView x:Name="AnomalyPlot" Model="{Binding VM_AnomalyPlotModel}" Margin="303.6,10,9.6,9.8" Grid.Column="1" Grid.RowSpan="2"/>
-
+ 
     </Grid>
 </Window>
