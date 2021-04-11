@@ -79,6 +79,10 @@ namespace FlightSimulatorApp.Models
             // Get the type to use.
             this.anomalyDetectorType = assemblyDLL.GetType(ClassName + ".Algorithm");
             // Create an instance.
+
+            //Debug.WriteLine(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "\\Resources\\reg_flight.csv"));
+            //Debug.WriteLine(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "\\Resources\\playback_small.xml"));
+
             string[] args = { "C:/Users/Or/Documents/Uni/SemesterD/AdvProg2/playback_small.xml" };
             this.Detector = Activator.CreateInstance(this.anomalyDetectorType, args);
 
