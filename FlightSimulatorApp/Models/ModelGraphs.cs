@@ -176,6 +176,7 @@ namespace FlightSimulatorApp.Models
             int line = this.linestep.Linestep;
             ThreadStart thread = new ThreadStart(() =>
             {
+                Thread.Sleep(500);
                 while (graphWindowOpened)
                 {
                     while (line != this.linestep.Linestep)
