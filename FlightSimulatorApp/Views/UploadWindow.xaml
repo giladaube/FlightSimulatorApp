@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FlightSimulatorApp.Views"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="Flight Simulation Setup" Height="450" Width="800" Closed="Window_Closed">
+        Title="Flight Simulation Setup" Height="450" Width="800" Closed="Window_Closed" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
