@@ -105,7 +105,7 @@ namespace FlightSimulatorApp.Models
 
             // Get the drawGraph method.
             this.drawGraphMethod = anomalyDetectorType.GetMethod("drawGraph");
-
+                                                                
 
         }
 
