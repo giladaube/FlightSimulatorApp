@@ -9,6 +9,7 @@ namespace FlightSimulatorApp.Models
 
         // Notify
         public event PropertyChangedEventHandler PropertyChanged;
+        private string csvPath;
         public void NotifyPropertyChanged(string propertyName)
         {
             if (this.PropertyChanged != null)
@@ -53,6 +54,7 @@ namespace FlightSimulatorApp.Models
 
         public void setParserPath(string csvPath, string xmlPath)
         {
+            this.csvPath = csvPath;
             parser = new csvParser(csvPath);
             parser.setXMLCol(xmlPath); // if xmlPath is null, parser a default XML file.
             parser.scanCsv();
