@@ -1,6 +1,7 @@
 ﻿using OxyPlot;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -40,6 +41,8 @@ namespace FlightSimulatorApp.Models
 
         private string dllPath;
 
+        private string csvPath;
+
         private List<DataPoint> anomalousPointsList;
         public List<DataPoint> AnomalousPointsList
         {
@@ -57,10 +60,11 @@ namespace FlightSimulatorApp.Models
 
 
 
-        public ModelAnomalies(string dllPath)
+        public ModelAnomalies(string dllPath, string csvPath)
         {
             this.AnomalyPlotModel = new PlotModel();
             this.dllPath = dllPath;
+            this.csvPath = csvPath;
         }
 
 
@@ -70,27 +74,32 @@ namespace FlightSimulatorApp.Models
             // Use the file name to load the assembly into the current
             // application domain.
             this.assemblyDLL = Assembly.LoadFile(this.dllPath);
+            //this.assemblyDLL.GetName();
+            //string filename = dllPath.Split('/').Last();
+            //string ClassName = filename.Split('.').First();
 
-            //this.assemblyDLL = Assembly.LoadFile("C:/Users/Or/source/repos/linearRegression/bin/Debug/linearRegression.dll");
+            string ClassName = System.IO.Path.GetFileNameWithoutExtension(dllPath);
 
             // Get the type to use.
-            this.anomalyDetectorType = assemblyDLL.GetType("linearRegression.LinearRegression");
+            this.anomalyDetectorType = assemblyDLL.GetType(ClassName + ".Algorithm");
             // Create an instance.
-            string[] args = { "C:/Users/Or/Documents/Uni/SemesterD/AdvProg2/playback_small.xml" };
+            string xml = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources\\playback_small.xml");
+            string[] args = { xml };
             this.Detector = Activator.CreateInstance(this.anomalyDetectorType, args);
 
 
             // Get the LearnNormal method.
             this.learnNormalMethod = anomalyDetectorType.GetMethod("LearnNormal");
             // Execute the method.
-            object[] lobject = new object[] { "C:/Users/Or/Documents/Uni/SemesterD/AdvProg2/reg_flight.csv", 0 };
+            string csvNormal = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources\\reg_flight.csv");
+            object[] lobject = new object[] { csvNormal, 0 };
             learnNormalMethod.Invoke(Detector, lobject);
 
 
             // Get the Detect method.
             this.detectMethod = anomalyDetectorType.GetMethod("Detect");
             // Execute the detect method.
-            lobject = new object[] { "C:/Users/Or/Documents/Uni/SemesterD/AdvProg2/anomaly_flight.csv" };
+            lobject = new object[] { csvPath };
             this.detectMethod.Invoke(Detector, lobject);
 
 

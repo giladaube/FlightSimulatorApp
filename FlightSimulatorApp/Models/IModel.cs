@@ -28,6 +28,8 @@ namespace FlightSimulatorApp.Models
         string SelectedGraphFeatureCorrelated { get; }
         List<DataPoint> Last300PointsOfSelectedFeature { get; }
         List<DataPoint> Last300PointsOfSelectedFeatureCorrelated { get; }
+        List<DataPoint> Last300PointsOfSelectedFeatureAsCorrelated { get; }
+
         List<string> ColNames { get; }
         
 

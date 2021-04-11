@@ -26,7 +26,7 @@ namespace FlightSimulatorApp.ViewModels
 
 
 
-        public List<string> VM_XmlColNames
+        public List<string> VM_ColNames
         {
             get { return this.model.ColNames; }
         }
@@ -39,6 +39,10 @@ namespace FlightSimulatorApp.ViewModels
         public List<DataPoint> VM_Last300PointsOfSelectedFeatureCorrelated
         {
             get { return model.Last300PointsOfSelectedFeatureCorrelated; }
+        }
+        public List<DataPoint> VM_Last300PointsOfSelectedFeatureAsCorrelated
+        {
+            get { return model.Last300PointsOfSelectedFeatureAsCorrelated; }
         }
 
         public string VM_SelectedGraphFeature

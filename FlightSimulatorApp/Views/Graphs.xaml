@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightSimulatorApp.Views" xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="Graphs" Height="450" Width="800">
+        Title="Graphs" Height="600" Width="800" Loaded="Graph_Window_Loaded" Closed="Window_Closed">
     <Grid Background="LightGreen">
 
 
@@ -25,9 +25,12 @@
         </oxy:Plot>
 
 
-        <Canvas Name="canGraph" Background="White"
-      Width="500" Height="300" Margin="0,244,19.6,26.4"
-      VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <oxy:Plot Title="{Binding VM_SelectedGraphFeatureCorrelated}" Margin="274,244,19.6,26.4">
+            <oxy:Plot.Series>
+                <oxy:LineSeries LineStyle="None" MarkerFill="Black" MarkerSize="1" MarkerType="Circle" ItemsSource="{Binding VM_Last300PointsOfSelectedFeatureAsCorrelated}"/>
+                <oxy:LineSeries LineStyle="Solid" ItemsSource ="{Binding VM_LinearRegression}" MarkerFill="Aqua" />
+            </oxy:Plot.Series>
+        </oxy:Plot>
 
         <Button Background="Azure" x:Name="DLLButton" Click="DLL_Button_Click" Margin="10,505,544.6,26.4" Content="Load DLL Anomaly Detection..."/>
 

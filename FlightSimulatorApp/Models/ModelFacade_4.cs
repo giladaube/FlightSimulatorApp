@@ -17,7 +17,7 @@ namespace FlightSimulatorApp.Models
         partial void StartFacade_4()
         {
             // add ModelGraphs and set its Notify funcions.
-            anomalies = new ModelAnomalies(dllPath);
+            anomalies = new ModelAnomalies(dllPath, csvPath);
             anomalies.PropertyChanged +=
                     delegate (Object sender, PropertyChangedEventArgs e)
                     {
@@ -41,7 +41,6 @@ namespace FlightSimulatorApp.Models
         {
             anomalies.updateSelectedAnomalyFeature(feature);
         }
-
 
 
         public PlotModel AnomalyPlotModel { get { return anomalies.AnomalyPlotModel; } }
