@@ -282,3 +282,5 @@ C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\G
 C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\Anomalies.g.cs
 C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\Anomalies.baml
 C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\Graphs.baml
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Resources\reg_flight.csv
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Resources\playback_small.xml

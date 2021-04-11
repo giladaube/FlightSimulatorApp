@@ -6,6 +6,7 @@ namespace FlightSimulatorApp.Models
     public partial class ModelFacade : IModel 
     {
         private csvParser parser;
+        private string csvPath;
 
         // Notify
         public event PropertyChangedEventHandler PropertyChanged;
@@ -53,6 +54,7 @@ namespace FlightSimulatorApp.Models
 
         public void setParserPath(string csvPath, string xmlPath)
         {
+            this.csvPath = csvPath;
             parser = new csvParser(csvPath);
             parser.setXMLCol(xmlPath); // if xmlPath is null, parser a default XML file.
             parser.scanCsv();

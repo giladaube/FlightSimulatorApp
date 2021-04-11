@@ -158,7 +158,10 @@ namespace FlightSimulatorApp.Models
             }
             else
             {
-                updateGraphsThread.Abort();
+                if (updateGraphsThread.IsAlive)
+                {
+                    updateGraphsThread.Abort();
+                }
             }
         }
 
@@ -193,13 +196,17 @@ namespace FlightSimulatorApp.Models
 
         public void updateSelectedFeature(string feature)
         {
-            this.SelectedGraphFeature = feature;
-            this.SelectedGraphFeatureCorrelated = GetMostCorrelatedFeatureOf(feature);
-            this.updateLinearRegression();
+            if (feature != null)
+            {
+                this.SelectedGraphFeature = feature;
+                this.SelectedGraphFeatureCorrelated = GetMostCorrelatedFeatureOf(feature);
+                this.updateLinearRegression();
 
-            this.Last300PointsOfSelectedFeature = this.updateFeaturePoints(SelectedGraphFeature);
-            this.Last300PointsOfSelectedFeatureCorrelated = this.updateFeaturePoints(SelectedGraphFeatureCorrelated);
-            this.Last300PointsOfSelectedFeatureAsCorrelated = this.updateFeatureAsCorrelatedPoints();
+                this.Last300PointsOfSelectedFeature = this.updateFeaturePoints(SelectedGraphFeature);
+                this.Last300PointsOfSelectedFeatureCorrelated = this.updateFeaturePoints(SelectedGraphFeatureCorrelated);
+                this.Last300PointsOfSelectedFeatureAsCorrelated = this.updateFeatureAsCorrelatedPoints();
+
+            }
         }
 
 
@@ -255,7 +262,6 @@ namespace FlightSimulatorApp.Models
 
         public List<DataPoint> updateFeaturePoints(string feature)
         {
-
             int start = 0;
             if (linestep.Linestep > 300)
             {

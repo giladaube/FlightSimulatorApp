@@ -85,6 +85,8 @@ namespace FlightSimulatorApp.Models
                 }
             }
 
+            this.colNames = dicAsCols.Keys.ToList();
+
             int rowNum = 0, colNum = 0;
             foreach (string line in lines)
             {
