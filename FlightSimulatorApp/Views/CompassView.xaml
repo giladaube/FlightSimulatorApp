@@ -10,7 +10,7 @@
         <Canvas Margin="383.333,126,201.333,-0.333" RenderTransformOrigin="0.5,0.5" Grid.Column="2" Grid.RowSpan="3">
 
 
-            <Image Source="/Resources/Compass.png" Canvas.Left="-260" Canvas.Top="-122" RenderTransformOrigin="0.5,0.5" Height="98" Width="99">
+            <Image Source="/Resources/Compass.png" Canvas.Left="-255" Canvas.Top="-124" RenderTransformOrigin="0.5,0.5" Height="85" Width="83">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -20,7 +20,7 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Path x:Name="Path_Copy" Width="1.272" Height="38.099" Canvas.Left="-211.469" Canvas.Top="-103.333" Stretch="Fill" StrokeThickness="0.200002" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFF0000" Data="F1 M 181.552,40.73L 181.35,159.165L 169.35,159.145L 169.552,40.7095L 175.829,12.8846L 181.552,40.73 Z " RenderTransformOrigin="0.5,0.5">
+            <Path x:Name="Path_Copy" Width="1.068" Height="33.046" Canvas.Left="-213.534" Canvas.Top="-107.19" Stretch="Fill" StrokeThickness="0.200002" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFF0000" Data="F1 M 181.552,40.73L 181.35,159.165L 169.35,159.145L 169.552,40.7095L 175.829,12.8846L 181.552,40.73 Z " RenderTransformOrigin="0.5,0.5">
                 <Path.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
