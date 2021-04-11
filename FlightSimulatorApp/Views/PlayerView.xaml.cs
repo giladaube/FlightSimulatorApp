@@ -95,6 +95,11 @@ namespace FlightSimulatorApp.Views
 
         public void close()
         {
+            if (!soundOn)
+            {
+                fg.soundHandle();
+                soundOn = true;
+            }
             vm.close();
             fg.close();
         }
