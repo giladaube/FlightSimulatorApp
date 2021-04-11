@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightSimulatorApp.Views"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         Title="Flight Simulation Setup" Height="450" Width="800" Closed="Window_Closed">
     <Grid>
@@ -25,27 +26,41 @@
 
         <TabControl x:Name="tabContorl" Style="{DynamicResource MahApps.Styles.TabControl.Animated}" Grid.ColumnSpan="5" Margin="0,0,2,48" Grid.RowSpan="5">
             <TabItem Header="Welcome" Name="welcomeTab">
-                <Grid>
+                <Grid Margin="24,10,50,-25.667">
+                    <TextBlock FontSize="20" FontWeight="Normal" Margin="24,10,50,10" TextWrapping="Wrap">
+                        With "FlightSimulation" you can simulate your flight in just a few simple steps.
+                        You will find it very easy to use.
+                       <LineBreak/>
+                        Hope you enjoy it!
+                        <LineBreak/>
+                        <LineBreak/>
+                        So what are you waiting for? just press the button down below and you will be a few minutes from start YOUR OWN SIMULATE.
+                        <LineBreak/>
+                    </TextBlock>
 
-                    <Label FontSize="20" FontWeight="Normal" Margin="24,10,50,10">
-                        <Label.Content>Need to add some explanation about this app, what can it do. who we are</Label.Content>
-                    </Label>
-                    <Button Background="LightCoral" Name="btnWelcome"  Click="btnWelcome_Click" Margin="658,270,64,21">Next</Button>
+                    <TextBlock Margin="38,297,441.333,28">
+                        <iconPacks:PackIconForkAwesome Kind="Copyright" Height="11" Width="10"/>
+                        Yahel Jacobs, Or Gottman, Gilad Daube
+                    </TextBlock>
+                    <Button x:Name="btnWelcome" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="646,290,16.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="btnWelcome_Click" SnapsToDevicePixels="False">
+                        <iconPacks:PackIconFontAwesome Kind="ChevronCircleRightSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
+                    </Button>
 
                 </Grid>
             </TabItem>
             <TabItem Header="Setup" Name="setupTab" >
-                <Grid Margin="24,10,50,10">
+                <Grid Margin="24,10,50,-25.667">
                     <TextBlock FontSize="16" TextWrapping="Wrap" Margin="1,24,-1,116" Padding="5,0" HorizontalAlignment="Left">
-                        In order to use "FlightSimulation" application, we need you to install the "FlightGear" application (don't worry it's free).
-                         You'll find the installation in the following link: 
+                        In order to use "FlightSimulation" application, we need you to install "FlightGear" (don't worry it's free).
+                        <LineBreak/> 
+                        You'll find the installation in the following link: 
                         <Hyperlink>https://www.flightgear.org/</Hyperlink>
                         <LineBreak/>
-                        We advise you to install the 2020.3.6 verison
+                        We advise you to install the following verison: 2020.3.6.
                         <LineBreak/>
                         <LineBreak/>
                     </TextBlock>
-                    <TextBlock Name="fgPathCheck" FontSize="16" TextWrapping="Wrap" Margin="2,90,-2,171" Padding="5,0" HorizontalAlignment="Left" Visibility="Hidden">
+                    <TextBlock Name="fgPathCheck" FontSize="16" TextWrapping="Wrap" Margin="2,90,0,153.333" Padding="5,0" HorizontalAlignment="Left" Visibility="Hidden" >
                         Now, for a smooth run of the application and the connection with "FlightGear" is stable was need you to add the right path so we can access "FlightGear". Please click on the following button to do so
                     </TextBlock>
 
@@ -53,53 +68,88 @@
                     <LineBreak/>
                         In addition, we need you to copy the XML you would like to work with, into the "FlightGear\Protocol" folder.
                     </TextBlock>
+
                     <TextBlock FontSize="11" TextWrapping="Wrap" Margin="3,243,0,-7"  Padding="5,0" HorizontalAlignment="Left">
                         If you want to use the default XML, just copy the "playback_small" file from the installation folder of this app into "FlightGear\Protocol" folder.
                     </TextBlock>
 
-                    <Button Background="LightCoral" Name="btnSetupNext" Margin="637,272,26,0" VerticalAlignment="Top" Click="btnSetupNext_Click">Next</Button>
-                    <Button Background="LightCoral" Name="btnSetupBack" Margin="572,272,86,0" VerticalAlignment="Top" Click="btnSetupBack_Click">Back</Button>
-                    <Button Background="LightCoral" x:Name="btnSetFGPath" Click="btnSetFGPath_Click" Margin="303,150,323,130" Content="Add FG Path" Visibility="Hidden" />
+                    <Button x:Name="btnSetupNext" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="646,290,16.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="btnSetupNext_Click" SnapsToDevicePixels="False">
+                        <iconPacks:PackIconFontAwesome Kind="ChevronCircleRightSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
+                    </Button>
+
+                    <Button x:Name="btnSetupBack" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="573,290,89.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="btnSetupBack_Click" SnapsToDevicePixels="False">
+                        <iconPacks:PackIconFontAwesome Kind="ChevronCircleLeftSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
+                    </Button>
+
+                    <Button x:Name="btnSetFGPath" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="326,125,335.333,134" Background="{x:Null}" BorderThickness="0" Click="btnSetFGPath_Click" SnapsToDevicePixels="False" ToolTip="Add a Path to Flight-Gear" Visibility="Hidden">
+                        <iconPacks:PackIconBootstrapIcons Kind="FolderPlus" Height="32" Width="38"/>
+                    </Button>
+
 
                 </Grid>
             </TabItem>
 
             <TabItem Header="Import">
-                <Grid>
-                    <TextBlock FontSize="20" TextWrapping="Wrap" >
-                        <TextBlock.Text>
-                            Need to add some explanation what need to be install first and XML in protocol folder. also get the FG dir folder
-                        </TextBlock.Text>
+                <Grid Margin="24,10,50,-25.667">
+                    <TextBlock FontSize="20" TextWrapping="Wrap" Margin="0,0,0,-23.667" >
+                        Just a few last steps and you are ready to go!
+                        <LineBreak/>
+                        <LineBreak/>
+                        To simulate your flight, we need a CSV file describing all the collected data from the flight.
+                        <LineBreak/>
+                        If you like, you can add an XML file- given us some settings about the provided CSV file. If not, we will use the default XML.
+                        <LineBreak/>
+                        <LineBreak/>
+                        Please use the following buttons for that purpose.
+
 
                     </TextBlock>
-                    <Button Background="LightCoral" Name="btnOpenCSVFile" Click="CSVFile_Button_Click" Margin="40,155,621,127" >Select CSV File...</Button>
-                    <TextBlock Name="CSVtextBox" Margin="231,55,35.6,325" ></TextBlock>
 
-                    <Button Background="LightCoral" Name="btnOpenXMLFile" Click="XMLFile_Button_Click" Margin="39,215,622,67">Select XML File...</Button>
-                    <TextBlock Name="XMLtextBox" Margin="231,128,35.6,252" ></TextBlock>
+                    <Button x:Name="btnOpenCSVFile" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="300,236,343.333,46" Background="{x:Null}" BorderThickness="0" Click="CSVFile_Button_Click" SnapsToDevicePixels="False" ToolTip="Add a CSV file">
+                        <iconPacks:PackIconFontAwesome Kind="FileImportSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
+                    </Button>
+                    <Button x:Name="btnOpenXMLFile" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="382,243,268.333,52" Background="{x:Null}" BorderThickness="0" Click="XMLFile_Button_Click" SnapsToDevicePixels="False" ToolTip="Add an XML file">
+                        <iconPacks:PackIconFontAwesome Kind="CogsSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
+                    </Button>
 
-                    <Button Background="LightCoral" Name="btnImportNext" Margin="647,298,26,8" VerticalAlignment="Top">Next</Button>
-                    <Button Background="LightCoral" Name="btnImportBack" Margin="503,298,170,8" VerticalAlignment="Top">Back</Button>
+                    <Button x:Name="btnImportNext" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="646,290,16.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="btnImportNext_Click" SnapsToDevicePixels="False" Visibility="Hidden">
+                        <iconPacks:PackIconFontAwesome Kind="ChevronCircleRightSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
+                    </Button>
+
+                    <Button x:Name="btnImportBack" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="573,290,89.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="btnImportBack_Click" SnapsToDevicePixels="False">
+                        <iconPacks:PackIconFontAwesome Kind="ChevronCircleLeftSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
+                    </Button>
 
                 </Grid>
             </TabItem>
             <TabItem Header="Done">
-                <Grid>
-                    <TextBlock FontSize="20" TextWrapping="Wrap" >
-                        <TextBlock.Text>
-                            Need to add some explanation what need to be install first and XML in protocol folder. also get the FG dir folder
-                        </TextBlock.Text>
+                <Grid Margin="24,10,50.333,-18.667">
+                    <TextBlock FontSize="30" TextWrapping="Wrap" >
+                        <LineBreak/>
+                        YOU ARE ALL SET AND READY TO GO!
+                    </TextBlock>
+                    <TextBlock FontSize="20" TextWrapping="Wrap" Margin="4,56,-5.667,-20.667" >
+                        <LineBreak/>
+                        <LineBreak/>
+                        If you want some guidance, please use the guide here below.
+
                     </TextBlock>
 
-                    <Button Background="LightCoral" Name="btnDoneStart" Margin="647,298,26,8" VerticalAlignment="Top">Start!</Button>
-                    <Button Background="LightCoral" Name="btnDoneBack" Margin="503,298,170,8" VerticalAlignment="Top">Back</Button>
+
+                    <Button x:Name="btnDoneStart" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="646,290,16.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="Continue_Button_Click" SnapsToDevicePixels="False">
+                        <iconPacks:PackIconFontAwesome Kind="ChevronCircleRightSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
+                    </Button>
+
+                    <Button x:Name="btnDoneBack" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="573,290,89.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="btnDoneBack_Click" SnapsToDevicePixels="False">
+                        <iconPacks:PackIconFontAwesome Kind="ChevronCircleLeftSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
+                    </Button>
 
                 </Grid>
             </TabItem>
         </TabControl>
 
 
-        <Button Background="Azure" Name="ContinueButton" Click="Continue_Button_Click" Margin="46,274,618.6,106" Visibility="Hidden">Continue</Button>
+        <Button Background="Azure" Name="ContinueButton" Click="Continue_Button_Click" Margin="46,274,618.6,106">Continue</Button>
 
     </Grid>
 </Window>

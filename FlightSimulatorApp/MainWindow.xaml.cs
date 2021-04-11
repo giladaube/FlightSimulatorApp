@@ -61,5 +61,11 @@ namespace FlightSimulatorApp
         {
             Application.Current.Shutdown();
         }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Thank you for using our app, see you soon!");
+            Window_Closed(sender, e);
+        }
     }
 }

@@ -53,11 +53,9 @@ namespace FlightSimulatorApp.Views
             {
                 // Open document 
                 csvFilePath = dlg.FileName;
-                CSVtextBox.Text = "Selected CSV File:   " + csvFilePath;
                 wasCsvSelected = true;
+                btnImportNext.Visibility = System.Windows.Visibility.Visible;
             }
-
-
         }
 
         private void XMLFile_Button_Click(object sender, RoutedEventArgs e)
@@ -77,7 +75,6 @@ namespace FlightSimulatorApp.Views
             {
                 // Open document 
                 xmlFilePath = dlg.FileName;
-                XMLtextBox.Text = "Selected XML File:   " + xmlFilePath;
                 wasXmlSelected = true;
 
                 // extract the XML name from the given path
@@ -93,12 +90,8 @@ namespace FlightSimulatorApp.Views
             {
                 // Open document 
                 fgFolderPath = dlg.FileName;
-                MessageBox.Show("Hello!");
-                //FGtextBox.Text = "Selected FG Path:   " + fgFolderPath;
-                ContinueButton.Visibility = System.Windows.Visibility.Visible;
-
-                // set a path to FlightGear folder.
-                MainWindow.FgPath = fgFolderPath;
+                MessageBox.Show("Thank you! 'FlightGear' path is updated.");
+                btnSetupNext.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
@@ -108,9 +101,16 @@ namespace FlightSimulatorApp.Views
             {
                 MainWindow.getModel().setParserPath(csvFilePath, xmlFilePath); // xmlFilePath could be null
                 inShutdown = false;
+                // set a path to FlightGear folder.
+                MainWindow.FgPath = fgFolderPath;
+
                 this.Close();
                 Window main = new MainWindow();
                 main.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Sorry! Can't start the app without a CSV file.");
             }
         }
 
@@ -126,14 +126,11 @@ namespace FlightSimulatorApp.Views
 
             if (!Directory.Exists("C:\\Program Files\\FlightGear 2020.3.6")) // default path to FlightGear folder doesn't exists
             {
+                btnSetupNext.Visibility = System.Windows.Visibility.Hidden;
                 fgPathCheck.Visibility = System.Windows.Visibility.Visible;
                 // show a button to add a path (also a match note for the user)
                 btnSetFGPath.Visibility = System.Windows.Visibility.Visible;
                 //FGtextBox.Text = "Sorry! We can't find the right Path to FlightGear folder. Please add it here.";
-            }
-            else
-            {
-                ContinueButton.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
@@ -143,6 +140,21 @@ namespace FlightSimulatorApp.Views
         }
 
         private void btnSetupNext_Click(object sender, RoutedEventArgs e)
+        {
+            tabContorl.SelectedIndex = 2;
+        }
+
+        private void btnImportNext_Click(object sender, RoutedEventArgs e)
+        {
+            tabContorl.SelectedIndex = 3;
+        }
+
+        private void btnImportBack_Click(object sender, RoutedEventArgs e)
+        {
+            tabContorl.SelectedIndex = 1;
+        }
+
+        private void btnDoneBack_Click(object sender, RoutedEventArgs e)
         {
             tabContorl.SelectedIndex = 2;
         }

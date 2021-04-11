@@ -6,14 +6,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightSimulatorApp"
         xmlns:viewmodels="clr-namespace:FlightSimulatorApp.ViewModels"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:views="clr-namespace:FlightSimulatorApp.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Closed="Window_Closed">
     <Window.Resources>
-        
+
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -26,11 +34,49 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DockPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5">
-            <views:PlayerView HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Background="SkyBlue" Grid.Column="0" Grid.Row="0" Grid.RowSpan="8" Grid.ColumnSpan="1">
+            <Button x:Name="A" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,50,18,0" Background="{x:Null}" BorderThickness="0" >
+                <iconPacks:PackIconFontAwesome Kind="TachometerAltSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27" Margin="0"/>
+            </Button>
+            <Button x:Name="B" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" >
+                <iconPacks:PackIconFontAwesome Kind="TachometerAltSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+            </Button>
+            <Button x:Name="C" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" >
+                <iconPacks:PackIconFontAwesome Kind="TachometerAltSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+            </Button>
+            <Button x:Name="D" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" >
+                <iconPacks:PackIconFontAwesome Kind="CompassSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+            </Button>
+            <Button x:Name="E" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,20,18,0" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" >
+                <iconPacks:PackIconFontAwesome Kind="ChartLineSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+            </Button>
+            <Button x:Name="btnExit" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,60,18,0" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" Click="btnExit_Click" ToolTip="Exit" >
+                <iconPacks:PackIconFontAwesome Kind="DoorOpenSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+            </Button>
+        </StackPanel>
 
+        <DockPanel Background="Gray" Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="5">
+        </DockPanel>
+        
+        <DockPanel Background="Yellow" Grid.Row="2" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="3">
+        </DockPanel>
+
+        <DockPanel Background="Yellow" Grid.Row="2" Grid.RowSpan="3" Grid.Column="9" Grid.ColumnSpan="3">
+        </DockPanel>
+
+        <DockPanel Background="Green" Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="5">
+        </DockPanel>
+        
+        <DockPanel Background="red" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="7">
+        </DockPanel>
+        
+        <DockPanel Grid.Row="6" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="11">
+            <views:PlayerView HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </DockPanel>
     </Grid>
 </Window>
