@@ -1,0 +1,284 @@
+﻿<UserControl x:Class="FlightSimulatorApp.Views.SpeedometerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" Width="206" Height="160">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="137*"/>
+        </Grid.RowDefinitions>
+
+        <Viewbox Margin="-4,4,2,6" Grid.RowSpan="2">
+            <Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Speedometer" Width="350" Height="350" Clip="F1 M 0,0L 350,0L 350,350L 0,350L 0,0">
+                <Canvas x:Name="Layer_1" Width="350" Height="350" Canvas.Left="0" Canvas.Top="0">
+                    <Ellipse x:Name="Ellipse" Width="350" Height="350" Canvas.Left="-1.01725e-005" Canvas.Top="0" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0">
+                        <Ellipse.Fill>
+                            <RadialGradientBrush RadiusX="0.206603" RadiusY="0.206603" Center="0.445205,0.580695" GradientOrigin="0.445205,0.580695">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FF292929" Offset="1"/>
+                                </RadialGradientBrush.GradientStops>
+                                <RadialGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <RotateTransform CenterX="0.445205" CenterY="0.580695" Angle="-34.8622"/>
+                                    </TransformGroup>
+                                </RadialGradientBrush.RelativeTransform>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <Ellipse x:Name="Ellipse_0" Width="330" Height="330" Canvas.Left="10.2001" Canvas.Top="8.89999" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FF959595" Fill="#FF000000" RenderTransformOrigin="0.5,0.5">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.005"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+                    <TextBlock x:Name="TextBlock" TextAlignment="Left" FontFamily="Segoe UI" FontSize="20" Width="Auto" Height="Auto" Canvas.Left="-53" Canvas.Top="1">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <MatrixTransform Matrix="1.33333,0,0,1.33333,131.033,182.461"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+			<Run Text="Airspeed (Knots)" Foreground="#FFFFFFFF"/>
+                    </TextBlock>
+                    <Rectangle x:Name="Rectangle" Width="1.73431" Height="11.6458" Canvas.Left="175.301" Canvas.Top="9.07666" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF"/>
+                    <Canvas Height="330" Canvas.Left="10" Canvas.Top="9" Width="330" RenderTransformOrigin="0.5,0.5">
+                        <Canvas.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="{Binding VM_Airspeed}"/>
+                                <!--Binded here!-->
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.RenderTransform>
+                        <Ellipse x:Name="Ellipse_10" Width="330" Height="330" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FF959595" RenderTransformOrigin="0.5,0.5">
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="0.005"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+
+                        <Path x:Name="Path" Width="12.402" Height="146.481" Canvas.Left="159.466" Canvas.Top="4.093" Stretch="Fill" StrokeThickness="0.200002" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 181.552,40.73L 181.35,159.165L 169.35,159.145L 169.552,40.7095L 175.829,12.8846L 181.552,40.73 Z "/>
+                    </Canvas>
+                    <Path x:Name="Path_2" Width="34.4333" Height="33.7667" Canvas.Left="158.574" Canvas.Top="157.293" Stretch="Fill" StrokeThickness="0.0999959" StrokeLineJoin="Round" Stroke="#FF393939" Data="F1 M 192.957,174.206C 192.941,183.503 185.243,191.026 175.762,191.01C 166.281,190.994 158.608,183.444 158.624,174.147C 158.64,164.85 166.339,157.327 175.819,157.343C 185.3,157.359 192.973,164.909 192.957,174.206 Z ">
+                        <Path.Fill>
+                            <RadialGradientBrush RadiusX="0.509901" RadiusY="0.499999" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF292929" Offset="0"/>
+                                    <GradientStop Color="#FF000000" Offset="1"/>
+                                </RadialGradientBrush.GradientStops>
+                                <RadialGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <RotateTransform CenterX="0.5" CenterY="0.5" Angle="90.0969"/>
+                                    </TransformGroup>
+                                </RadialGradientBrush.RelativeTransform>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path x:Name="Path_3" Width="15.1539" Height="14.9407" Canvas.Left="277.856" Canvas.Top="57.1145" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 291.794,57.1145L 293.01,58.3511L 279.072,72.0551L 277.856,70.8185L 291.794,57.1145 Z "/>
+                    <Path x:Name="Path_4" Width="10.224" Height="8.56549" Canvas.Left="299.163" Canvas.Top="76.3473" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 308.314,76.3473L 309.387,77.7101L 300.235,84.9128L 299.163,83.55L 308.314,76.3473 Z "/>
+                    <Path x:Name="Path_5" Width="10.9895" Height="7.24529" Canvas.Left="311.508" Canvas.Top="97.869" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 321.643,97.869L 322.497,99.3783L 312.362,105.114L 311.508,103.605L 321.643,97.869 Z "/>
+                    <Path x:Name="Path_6" Width="11.5354" Height="5.61848" Canvas.Left="319.156" Canvas.Top="116.903" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 330.097,116.903L 330.691,118.533L 319.75,122.522L 319.156,120.892L 330.097,116.903 Z "/>
+                    <Path x:Name="Path_7" Width="11.7476" Height="4.18181" Canvas.Left="325.882" Canvas.Top="143.383" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 337.259,143.383L 337.63,145.077L 326.252,147.565L 325.882,145.871L 337.259,143.383 Z "/>
+                    <Path x:Name="Line" Width="0" Height="349.5" Canvas.Left="175.738" Canvas.Top="19.0247" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Data="F1 M 175.738,19.0247L 175.738,368.525"/>
+                    <Path x:Name="Line_8" Width="364.042" Height="0.166687" Canvas.Left="-4.6853" Canvas.Top="173.992" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Data="F1 M -4.6853,173.992L 359.356,174.159"/>
+                    <Path x:Name="Path_11" Width="19.549" Height="1.76256" Canvas.Left="320.266" Canvas.Top="173.334" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 339.813,173.334L 339.815,175.068L 320.269,175.097L 320.266,173.362L 339.813,173.334 Z "/>
+                    <Path x:Name="Path_12" Width="11.7653" Height="2.98732" Canvas.Left="326.38" Canvas.Top="197.37" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 338.145,198.633L 337.957,200.357L 326.38,199.094L 326.568,197.37L 338.145,198.633 Z "/>
+                    <Path x:Name="Path_13" Width="11.6996" Height="4.67528" Canvas.Left="320.897" Canvas.Top="220.333" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 332.597,223.333L 332.15,225.008L 320.897,222.009L 321.344,220.333L 332.597,223.333 Z "/>
+                    <Path x:Name="Path_14" Width="11.3221" Height="6.3905" Canvas.Left="313.986" Canvas.Top="238.031" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 325.308,242.842L 324.592,244.422L 313.986,239.611L 314.703,238.031L 325.308,242.842 Z "/>
+                    <Path x:Name="Path_15" Width="10.7871" Height="7.65759" Canvas.Left="301.097" Canvas.Top="260.576" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 311.884,266.764L 310.963,268.234L 301.097,262.045L 302.019,260.576L 311.884,266.764 Z "/>
+                    <Path x:Name="Path_16" Width="14.9654" Height="15.1297" Canvas.Left="277.516" Canvas.Top="275.976" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 292.482,289.888L 291.247,291.106L 277.516,277.195L 278.751,275.976L 292.482,289.888 Z "/>
+                    <Path x:Name="Path_17" Width="8.58118" Height="10.2126" Canvas.Left="264.7" Canvas.Top="297.308" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 273.281,306.445L 271.92,307.521L 264.7,298.383L 266.06,297.308L 273.281,306.445 Z "/>
+                    <Path x:Name="Path_18" Width="7.26331" Height="10.9813" Canvas.Left="244.522" Canvas.Top="309.692" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 251.785,319.816L 250.277,320.673L 244.522,310.549L 246.03,309.692L 251.785,319.816 Z "/>
+                    <Path x:Name="Path_19" Width="5.6386" Height="11.5308" Canvas.Left="227.129" Canvas.Top="317.373" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 232.767,328.307L 231.139,328.904L 227.129,317.971L 228.757,317.373L 232.767,328.307 Z "/>
+                    <Path x:Name="Path_20" Width="4.20314" Height="11.7459" Canvas.Left="202.098" Canvas.Top="324.147" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 206.301,335.52L 204.608,335.893L 202.098,324.521L 203.792,324.147L 206.301,335.52 Z "/>
+                    <Path x:Name="Path_21" Width="1.74062" Height="19.5471" Canvas.Left="174.783" Canvas.Top="319.346" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 174.79,319.346L 176.524,319.347L 176.518,338.893L 174.783,338.893L 174.79,319.346 Z "/>
+                    <Path x:Name="Path_22" Width="4.21594" Height="11.745" Canvas.Left="134.087" Canvas.Top="322.375" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 135.78,334.12L 134.087,333.745L 136.609,322.375L 138.302,322.751L 135.78,334.12 Z "/>
+                    <Path x:Name="Path_23" Width="6.19753" Height="11.3826" Canvas.Left="103.444" Canvas.Top="311.886" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 105.037,323.269L 103.444,322.583L 108.049,311.886L 109.642,312.572L 105.037,323.269 Z "/>
+                    <Path x:Name="Path_24" Width="7.76111" Height="10.7315" Canvas.Left="82.3363" Canvas.Top="300.488" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 83.7947,311.22L 82.3363,310.281L 88.6391,300.488L 90.0974,301.427L 83.7947,311.22 Z "/>
+                    <Path x:Name="Path_25" Width="8.87723" Height="9.9859" Canvas.Left="60.9605" Canvas.Top="284.273" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 62.28,294.258L 60.9605,293.133L 68.5183,284.273L 69.8378,285.398L 62.28,294.258 Z "/>
+                    <Path x:Name="Path_26" Width="16.641" Height="13.1671" Canvas.Left="41.3809" Canvas.Top="258.568" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 56.9764,258.568L 58.0219,259.952L 42.4264,271.735L 41.3809,270.352L 56.9764,258.568 Z "/>
+                    <Path x:Name="Path_27" Width="11.353" Height="6.291" Canvas.Left="32.15" Canvas.Top="245.558" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 23.8295,239.66L 23.1289,238.073L 33.7821,233.369L 34.4827,234.955L 23.8295,239.66 Z " RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="2.238"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="Path_29" Width="19.491" Height="5.671" Canvas.Left="10.071" Canvas.Top="168.756" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 32.0961,200.563L 32.4485,202.262L 13.3098,206.234L 12.9574,204.536L 32.0961,200.563 Z " RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="10.611"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="Path_33" Width="16.387" Height="13.512" Canvas.Left="56.76" Canvas.Top="62.04" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 63.0079,81.01L 61.9296,82.3683L 46.6209,70.2147L 47.6992,68.8564L 63.0079,81.01 Z " RenderTransformOrigin="-0.314,2.011">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-2.571"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="Path_37" Width="3.19789" Height="11.7718" Canvas.Left="196.852" Canvas.Top="10.373" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 198.329,10.373L 200.05,10.5931L 198.572,22.1448L 196.852,21.9248L 198.329,10.373 Z "/>
+                    <Path x:Name="Path_38" Width="4.6198" Height="11.7063" Canvas.Left="219.934" Canvas.Top="15.6799" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 222.876,15.6799L 224.554,16.118L 221.612,27.3861L 219.934,26.9481L 222.876,15.6799 Z "/>
+                    <Path x:Name="Path_39" Width="6.02472" Height="11.4326" Canvas.Left="243.604" Canvas.Top="26.039" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 248.025,26.039L 249.629,26.6972L 245.209,37.4716L 243.604,36.8134L 248.025,26.039 Z "/>
+                    <Path x:Name="Path_40" Width="7.63464" Height="10.7992" Canvas.Left="263.9" Canvas.Top="39.05" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 270.063,39.05L 271.535,39.9678L 265.372,49.8492L 263.9,48.9314L 270.063,39.05 Z "/>
+                    <TextBlock x:Name="TextBlock_41" TextAlignment="Left" FontFamily="Segoe UI" FontSize="10" Width="Auto" Height="Auto" Canvas.Left="0" Canvas.Top="0">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <MatrixTransform Matrix="1.33333,0,0,1.33333,173.314,17.9455"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+			<Run Text="0" Foreground="#FFFFFFFF"/>
+                    </TextBlock>
+                    <TextBlock x:Name="TextBlock_43" TextAlignment="Left" FontFamily="Segoe UI" FontSize="24" Width="Auto" Height="Auto" Canvas.Left="0" Canvas.Top="0">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <MatrixTransform Matrix="1.33333,0,0,1.33333,228.881,61.4386"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform><Run Foreground="White" Text="25"/></TextBlock>
+                    <TextBlock x:Name="TextBlock_44" TextAlignment="Left" FontFamily="Segoe UI" FontSize="24" Width="Auto" Height="Auto" Canvas.Left="0" Canvas.Top="0">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <MatrixTransform Matrix="1.33333,0,0,1.33333,265.378,151.439"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform><Run Foreground="White" Text="50"/></TextBlock>
+                    <TextBlock x:Name="TextBlock_45" TextAlignment="Left" FontFamily="Segoe UI" FontSize="24" Width="Auto" Height="Auto" Canvas.Left="0" Canvas.Top="0">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <MatrixTransform Matrix="1.33333,0,0,1.33333,228.544,242.7"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform><Run Foreground="White" Text="75"/></TextBlock>
+                    <TextBlock x:Name="TextBlock_46" TextAlignment="Left" FontFamily="Segoe UI" FontSize="24" Width="Auto" Height="Auto" Canvas.Left="0" Canvas.Top="0">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <MatrixTransform Matrix="1.33333,0,0,1.33333,148.454,281.866"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform><Run Foreground="White" Text="100"/></TextBlock>
+                    <TextBlock x:Name="TextBlock_47" TextAlignment="Left" FontFamily="Segoe UI" FontSize="24" Width="Auto" Height="Auto" Canvas.Left="0" Canvas.Top="0">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <MatrixTransform Matrix="1.33333,0,0,1.33333,59.9544,226.866"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform><Run Foreground="White" Text="125"/></TextBlock>
+                    <TextBlock x:Name="TextBlock_49" TextAlignment="Left" FontFamily="Segoe UI" FontSize="24" Width="Auto" Height="Auto" Canvas.Left="1" Canvas.Top="22">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <MatrixTransform Matrix="1.33333,0,0,1.33333,32.3278,124.366"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform><Run Foreground="White" Text="125"/></TextBlock>
+                    <TextBlock x:Name="TextBlock_50" TextAlignment="Left" FontFamily="Segoe UI" FontSize="24" Width="Auto" Height="Auto" Canvas.Left="18">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <MatrixTransform Matrix="1.33333,0,0,1.33333,61.6747,67.3748"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform><Run Foreground="White" Text="175"/></TextBlock>
+                    <Path x:Name="Path_52" Width="39.764" Height="12.912" Canvas.Left="53.968" Canvas.Top="64.524" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFF0000" Data="F1 M 55.1405,137.775L 54.2555,141.534L 15.3763,132.381L 16.2612,128.622L 55.1405,137.775 Z " RenderTransformOrigin="0.602,1.267">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="19.629"/>
+                                <TranslateTransform X="-4.62" Y="0.785"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="Path_27_Copy" Width="11.353" Height="6.291" Canvas.Left="21.779" Canvas.Top="225.487" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 23.8295,239.66L 23.1289,238.073L 33.7821,233.369L 34.4827,234.955L 23.8295,239.66 Z " RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="3.396"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="Path_27_Copy1" Width="11.353" Height="6.291" Canvas.Left="14.667" Canvas.Top="206.004" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 23.8295,239.66L 23.1289,238.073L 33.7821,233.369L 34.4827,234.955L 23.8295,239.66 Z " RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="15.892"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="Path_27_Copy2" Width="11.353" Height="6.291" Canvas.Left="11.701" Canvas.Top="186.724" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 23.8295,239.66L 23.1289,238.073L 33.7821,233.369L 34.4827,234.955L 23.8295,239.66 Z " RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="20.029"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="Path_27_Copy3" Width="11.353" Height="6.291" Canvas.Left="25.79" Canvas.Top="112.713" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 23.8295,239.66L 23.1289,238.073L 33.7821,233.369L 34.4827,234.955L 23.8295,239.66 Z " RenderTransformOrigin="-0.282,-5.269">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="31.074"/>
+                                <TranslateTransform X="23.163" Y="-14.066"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="Path_27_Copy4" Width="11.353" Height="6.291" Canvas.Left="-7.401" Canvas.Top="134.72" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 23.8295,239.66L 23.1289,238.073L 33.7821,233.369L 34.4827,234.955L 23.8295,239.66 Z " RenderTransformOrigin="-0.826,-5.878">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="23.452"/>
+                                <TranslateTransform X="44.374" Y="-18.484"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="Path_27_Copy5" Width="11.353" Height="6.291" Canvas.Left="-25.333" Canvas.Top="175.619" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 23.8295,239.66L 23.1289,238.073L 33.7821,233.369L 34.4827,234.955L 23.8295,239.66 Z " RenderTransformOrigin="-2.997,0.92">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="32.708"/>
+                                <TranslateTransform X="42.54" Y="-54.599"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="Path_27_Copy6" Width="11.353" Height="6.291" Canvas.Left="-17.02" Canvas.Top="100.781" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFD0D0D0" Fill="#FFFFFFFF" Data="F1 M 23.8295,239.66L 23.1289,238.073L 33.7821,233.369L 34.4827,234.955L 23.8295,239.66 Z " RenderTransformOrigin="-4.848,-2.864">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="46.303"/>
+                                <TranslateTransform X="90.813" Y="-58.899"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+
+
+    </Grid>
+</UserControl>

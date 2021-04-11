@@ -98,6 +98,7 @@ namespace FlightSimulatorApp.Models
         public void playSimulator()
         {
             player.play();
+            play();
         }
         public void pauseSimulator()
         {

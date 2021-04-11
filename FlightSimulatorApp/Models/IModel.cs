@@ -13,7 +13,16 @@ namespace FlightSimulatorApp.Models
         int TimeSimulator { get; }
         int Linestep { get; set; }
 
-
+        double Altimeter { set; get; }
+        double Airspeed { set; get; }
+        double Aileron { set; get; }
+        double Elevator { set; get; }
+        double Rudder { set; get; }
+        double Throttle { set; get; }
+        double Heading { set; get; }
+        double Roll { set; get; }
+        double Pitch { set; get; }
+        double Yaw { set; get; }
         // Graphs Properties
         string SelectedGraphFeature { get; }
         string SelectedGraphFeatureCorrelated { get; }
@@ -36,6 +45,8 @@ namespace FlightSimulatorApp.Models
         void changeTimestep(double timestep);
         void playSimulator();
         void pauseSimulator();
+
+        void play();
 
 
         // ModelControls commands

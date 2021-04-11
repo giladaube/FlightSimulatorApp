@@ -1,8 +1,14 @@
-﻿C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Release\GeneratedInternalTypeHelper.g.cs
-FC:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\App.xaml;;
-FC:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\AppWindow.xaml;;
-FC:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\MainWindow.xaml;;
-FC:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\Views\Graphs.xaml;;
-FC:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\Views\PlayerView.xaml;;
-FC:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\Views\UploadWindow.xaml;;
+﻿C:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\obj\Release\GeneratedInternalTypeHelper.g.cs
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\App.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\AppWindow.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\MainWindow.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\Views\AltimeterView.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\Views\Anomalies.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\Views\CompassView.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\Views\Graphs.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\Views\JoystickView.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\Views\PlayerView.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\Views\RPYView.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\Views\SpeedometerView.xaml;;
+FC:\Users\yahel\source\repos\FlightSimulatorApp1\FlightSimulatorApp\Views\UploadWindow.xaml;;
 

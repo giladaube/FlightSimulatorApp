@@ -27,6 +27,8 @@ namespace FlightSimulatorApp
         private static IModel model = new ModelFacade();
 
         private static string fgPath;
+
+        private UserControl u1 = new AltimeterView();
         public static string FgPath
         {
             get { return fgPath; }
@@ -56,6 +58,70 @@ namespace FlightSimulatorApp
         {
             return model;
         }
+
+
+        private void Compass_Click(object sender, EventArgs e)
+        {
+            if (comPanel.Visibility == System.Windows.Visibility.Visible)
+            {
+                this.comPanel.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else
+            {
+                this.comPanel.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void Altimeter_Click(object sender, EventArgs e)
+        {
+            if (altPanel.Visibility == System.Windows.Visibility.Visible)
+            {
+                this.altPanel.Visibility = System.Windows.Visibility.Collapsed;
+                //this.altPanel.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                //this.altPanel.Visibility = System.Windows.Visibility.Collapsed;
+                this.altPanel.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void Joystick_Click(object sender, EventArgs e)
+        {
+            if (joyPanel.Visibility == System.Windows.Visibility.Visible)
+            {
+                this.joyPanel.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else
+            {
+                this.joyPanel.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+        
+        private void Speedometer_Click(object sender, EventArgs e)
+        {
+            if (spePanel.Visibility == System.Windows.Visibility.Visible)
+            {
+                this.spePanel.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else
+            {
+                this.spePanel.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void RPY_Click(object sender, EventArgs e)
+        {
+            if (rpyPanel.Visibility == System.Windows.Visibility.Visible)
+            {
+                this.rpyPanel.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else
+            {
+                this.rpyPanel.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
 
         private void Window_Closed(object sender, EventArgs e)
         {

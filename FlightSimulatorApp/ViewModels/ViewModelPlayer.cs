@@ -37,6 +37,8 @@ namespace FlightSimulatorApp.ViewModels
             get { return model.TimeSimulator; }
         }
 
+
+   
         public ViewModelPlayer(IModel model)
         {
             this.model = model;
