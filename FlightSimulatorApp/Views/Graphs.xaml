@@ -9,7 +9,7 @@
     <Grid Background="LightGreen">
 
 
-        <ListBox Name="MyListBox" ItemsSource="{Binding VM_XmlColNames}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="ListBox_SelectionChanged" Margin="10,20,544.6,70.4"/>
+        <ListBox Name="MyListBox" ItemsSource="{Binding VM_ColNames}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="ListBox_SelectionChanged" Margin="10,20,544.6,70.4"/>
 
 
         <oxy:Plot Title="{Binding VM_SelectedGraphFeature}" Margin="274,20,282.6,344.4">

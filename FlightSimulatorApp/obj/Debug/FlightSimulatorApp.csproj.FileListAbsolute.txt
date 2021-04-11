@@ -279,3 +279,6 @@ C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightS
 C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.exe
 C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.pdb
 C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\Graphs.g.cs
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\Anomalies.g.cs
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\Anomalies.baml
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\Graphs.baml

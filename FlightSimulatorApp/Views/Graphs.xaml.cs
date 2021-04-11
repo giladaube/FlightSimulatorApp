@@ -21,36 +21,32 @@ namespace FlightSimulatorApp.Views
     /// </summary>
     partial class Graphs : Window
     {
-        private GraphsViewModel vm;
+        private ViewModelGraphs vm;
         private bool wasDLLSelected = false;
         private string dllPath;
 
-        public GraphsViewModel Vm
-        {
-            get { return this.vm; }
-            set { this.vm = value; }
-        }
 
-        public Graphs(GraphsViewModel vm)
+        public Graphs()
         {
             InitializeComponent();
-            this.Vm = vm;
-            DataContext = vm;
+            this.vm = new ViewModelGraphs(MainWindow.getModel());
+            this.DataContext = this.vm;
 
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             foreach (var selectedItem in MyListBox.SelectedItems)
-            {
+            { 
                 string feature = selectedItem.ToString();
                 vm.updateSelectedFeature(feature);
-                vm.setGraphWindowOpened(true);
+                
             }
         }
 
         private void Graph_Window_Loaded(object sender, RoutedEventArgs e)
         {
+            vm.setGraphWindowOpened(true);
             this.vm.LearnNormal();
         }
 
@@ -72,10 +68,9 @@ namespace FlightSimulatorApp.Views
                 // Open document 
                 dllPath = dlg.FileName;
                 wasDLLSelected = true;
-                vm.setAnomaliesWindowOpened(true);
                 vm.setDllPath(dllPath);
-                //Anomalies AnomaliesWindow = new Anomalies(vm);
-                //AnomaliesWindow.Show();
+                Anomalies AnomaliesWindow = new Anomalies();
+                AnomaliesWindow.Show();
             }
         }
     }

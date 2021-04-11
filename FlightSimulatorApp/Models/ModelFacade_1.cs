@@ -3,14 +3,34 @@ using System.ComponentModel;
 
 namespace FlightSimulatorApp.Models
 {
+    public class SharedLinestep
+    {
+        private IModel model;
+        public int Linestep
+        {
+            get { return model.Linestep; }
+            set
+            {
+                model.Linestep = value;
+            }
+        }
+
+        public SharedLinestep(IModel m)
+        {
+            model = m;
+        }
+    }
+
     public partial class ModelFacade 
     {
         // Models Private Member
         private ModelPlayer player;
+        private SharedLinestep slinestep;
 
         // Initiate models here
         partial void StartFacade_1()
         {
+            slinestep = new SharedLinestep(this);
             // add ModelPlayer and set it's Notify funcions.
             player = new ModelPlayer("localhost", 5400, 0, parser.rowsList);
             player.PropertyChanged +=
@@ -27,6 +47,12 @@ namespace FlightSimulatorApp.Models
             player.end();
         }
 
+        public int Linestep
+        {
+            get { return player.Linestep; }
+            set { player.changeLinestep(value); }
+        }
+
         // Represent the current run-time of the simulation, in seconds.
         public double Timestep
         {
@@ -36,7 +62,8 @@ namespace FlightSimulatorApp.Models
             }
             set
             {
-                player.changeLinestep(Convert.ToInt32(value * 10));
+                Linestep = Convert.ToInt32(value * 10);
+                //player.changeLinestep(Convert.ToInt32(value * 10));
             }
         }
 

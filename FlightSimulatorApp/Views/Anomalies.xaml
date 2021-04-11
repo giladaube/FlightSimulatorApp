@@ -1,0 +1,18 @@
+﻿<Window x:Class="FlightSimulatorApp.Views.Anomalies"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightSimulatorApp.Views" xmlns:oxy="http://oxyplot.org/wpf"
+        mc:Ignorable="d"
+        Title="Anomalies" Height="750" Width="1000" Loaded="Anomalies_Window_Loaded">
+    <Grid Background="LightGreen">
+
+        <ListBox Name="AnomalousPointsListBox" ItemsSource="{Binding VM_AnomalousPointsList}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="AnomalousPointsListBox_SelectionChanged" Margin="20.6,542.3,701.6,9.8" Grid.Column="1" Grid.Row="1"/>
+
+        <ListBox Name="MyListBox" ItemsSource="{Binding VM_ColNames}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="ListBox_SelectionChanged" Margin="20.6,10,701.6,141.8" Grid.Column="1" Grid.RowSpan="2"/>
+
+        <oxy:PlotView x:Name="AnomalyPlot" Model="{Binding VM_AnomalyPlotModel}" Margin="303.6,10,9.6,9.8" Grid.Column="1" Grid.RowSpan="2"/>
+
+    </Grid>
+</Window>

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using OxyPlot;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace FlightSimulatorApp.Models
 {
@@ -9,6 +11,21 @@ namespace FlightSimulatorApp.Models
         double Timestep { set; get; }
         string Timedisplay { get; }
         int TimeSimulator { get; }
+        int Linestep { get; set; }
+
+
+        // Graphs Properties
+        string SelectedGraphFeature { get; }
+        string SelectedGraphFeatureCorrelated { get; }
+        List<DataPoint> Last300PointsOfSelectedFeature { get; }
+        List<DataPoint> Last300PointsOfSelectedFeatureCorrelated { get; }
+        List<string> ColNames { get; }
+        
+
+        // Anomalies Properties
+        PlotModel AnomalyPlotModel { get; }
+        List<DataPoint> AnomalousPointsList { get; }
+
 
         // Model COMMANDS
         void end(); // End Simulator
@@ -20,5 +37,18 @@ namespace FlightSimulatorApp.Models
         void playSimulator();
         void pauseSimulator();
 
+
+        // ModelControls commands
+
+
+        // ModelGraphs commands
+        void updateSelectedFeature(string feature);
+        void setDllPath(string dllPath);
+        void LearnNormal();
+        void setGraphWindowOpened(bool value);
+
+        // ModelAnomalies commands
+        void loadDLL();
+        void updateSelectedAnomalyFeature(string feature);
     }
 }

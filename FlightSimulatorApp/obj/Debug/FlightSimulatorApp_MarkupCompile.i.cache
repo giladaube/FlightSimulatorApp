@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\
 FlightSimulatorApp
 none
 false
 DEBUG;TRACE
-C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\App.xaml
-5343158158
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\App.xaml
+61321578268
 
-24-591942468
-59-23020364
-AppWindow.xaml;MainWindow.xaml;Views\Graphs.xaml;Views\PlayerView.xaml;Views\UploadWindow.xaml;
+29130263362
+59-712049518
+AppWindow.xaml;MainWindow.xaml;Views\Anomalies.xaml;Views\Graphs.xaml;Views\PlayerView.xaml;Views\UploadWindow.xaml;
 
-False
+True
 
