@@ -1,0 +1,36 @@
+﻿<Window x:Class="FlightSimulatorApp.Views.Graphs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightSimulatorApp.Views" xmlns:oxy="http://oxyplot.org/wpf"
+        mc:Ignorable="d"
+        Title="Graphs" Height="450" Width="800">
+    <Grid Background="LightGreen">
+
+
+        <ListBox Name="MyListBox" ItemsSource="{Binding VM_XmlColNames}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="ListBox_SelectionChanged" Margin="10,20,544.6,70.4"/>
+
+
+        <oxy:Plot Title="{Binding VM_SelectedGraphFeature}" Margin="274,20,282.6,344.4">
+            <oxy:Plot.Series>
+                <oxy:LineSeries ItemsSource="{Binding VM_Last300PointsOfSelectedFeature}"/>
+            </oxy:Plot.Series>
+        </oxy:Plot>
+
+        <oxy:Plot Title="{Binding VM_SelectedGraphFeatureCorrelated}" Margin="525,20,19.6,344.4">
+            <oxy:Plot.Series>
+                <oxy:LineSeries ItemsSource="{Binding VM_Last300PointsOfSelectedFeatureCorrelated}"/>
+            </oxy:Plot.Series>
+        </oxy:Plot>
+
+
+        <Canvas Name="canGraph" Background="White"
+      Width="500" Height="300" Margin="0,244,19.6,26.4"
+      VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+        <Button Background="Azure" x:Name="DLLButton" Click="DLL_Button_Click" Margin="10,505,544.6,26.4" Content="Load DLL Anomaly Detection..."/>
+
+
+    </Grid>
+</Window>

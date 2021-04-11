@@ -184,6 +184,7 @@
     </Compile>
     <Compile Include="FG.cs" />
     <Compile Include="Models\csvParser.cs" />
+    <Compile Include="Models\ModelGraphs.cs" />
     <Compile Include="Models\ModelFacade_3.cs" />
     <Compile Include="Models\ModelFacade_2.cs" />
     <Compile Include="Models\Client.cs" />
@@ -192,7 +193,11 @@
     <Compile Include="Models\Notify.cs" />
     <Compile Include="Models\ModelFacade.cs" />
     <Compile Include="Models\IClient.cs" />
+    <Compile Include="ViewModels\GraphsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelPlayer.cs" />
+    <Compile Include="Views\Graphs.xaml.cs">
+      <DependentUpon>Graphs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PlayerView.xaml.cs">
       <DependentUpon>PlayerView.xaml</DependentUpon>
     </Compile>
@@ -215,6 +220,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Graphs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PlayerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

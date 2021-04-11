@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\
+C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Release\
 FlightSimulatorApp
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\App.xaml
 5343158158
 
