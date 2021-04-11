@@ -10,6 +10,7 @@ namespace FlightSimulatorApp.Models
 
         // Notify
         public event PropertyChangedEventHandler PropertyChanged;
+        private string csvPath;
         public void NotifyPropertyChanged(string propertyName)
         {
             if (this.PropertyChanged != null)
