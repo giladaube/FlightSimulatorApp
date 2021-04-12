@@ -26,6 +26,7 @@ namespace FlightSimulatorApp.Models
         // Graphs Properties
         string SelectedGraphFeature { get; }
         string SelectedGraphFeatureCorrelated { get; }
+        List<DataPoint> LinearRegression { get; }
         List<DataPoint> Last300PointsOfSelectedFeature { get; }
         List<DataPoint> Last300PointsOfSelectedFeatureCorrelated { get; }
         List<DataPoint> Last300PointsOfSelectedFeatureAsCorrelated { get; }

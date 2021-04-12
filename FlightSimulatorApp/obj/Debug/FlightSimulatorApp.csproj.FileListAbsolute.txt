@@ -439,3 +439,13 @@ C:\Users\yahel\Source\Repos\FlightSimulatorApp1\FlightSimulatorApp\obj\Debug\Fli
 C:\Users\yahel\Source\Repos\FlightSimulatorApp1\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.Properties.Resources.resources
 C:\Users\yahel\Source\Repos\FlightSimulatorApp1\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.csproj.GenerateResource.cache
 C:\Users\yahel\Source\Repos\FlightSimulatorApp1\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.csproj.CopyComplete
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\AltimeterView.g.cs
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\CompassView.g.cs
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\JoystickView.g.cs
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\RPYView.g.cs
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\SpeedometerView.g.cs
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\AltimeterView.baml
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\CompassView.baml
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\JoystickView.baml
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\RPYView.baml
+C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\SpeedometerView.baml
