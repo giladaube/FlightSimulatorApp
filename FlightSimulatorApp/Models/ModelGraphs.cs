@@ -158,7 +158,7 @@ namespace FlightSimulatorApp.Models
             }
             else
             {
-                if (updateGraphsThread.IsAlive)
+                if (updateGraphsThread != null && updateGraphsThread.IsAlive)
                 {
                     updateGraphsThread.Abort();
                 }
@@ -176,12 +176,11 @@ namespace FlightSimulatorApp.Models
             int line = this.linestep.Linestep;
             ThreadStart thread = new ThreadStart(() =>
             {
-                Thread.Sleep(500);
                 while (graphWindowOpened)
                 {
                     while (line != this.linestep.Linestep)
                     {
-                        if (SelectedGraphFeature != null)
+                        if (SelectedGraphFeature != null && SelectedGraphFeatureCorrelated != null)
                         {
                             this.Last300PointsOfSelectedFeature = this.updateFeaturePoints(SelectedGraphFeature);
                             this.Last300PointsOfSelectedFeatureCorrelated = this.updateFeaturePoints(SelectedGraphFeatureCorrelated);

@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FlightSimulatorApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="200" Width="271" Height="160">
+             d:DesignHeight="200" Width="271" Height="165">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="98*"/>
             <ColumnDefinition Width="19*"/>
             <ColumnDefinition Width="72*"/>
         </Grid.ColumnDefinitions>
-        <Slider HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" Width="116" Value="{Binding VM_Throttle, Mode=OneWay}" Minimum="-1" Maximum="1" Margin="-1,39,0,0" RenderTransformOrigin="0.48,0.478">
+        <Slider HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" Width="116" Value="{Binding VM_Throttle, Mode=OneWay}" Minimum="-1" Maximum="1" Margin="-1,39,0,0" RenderTransformOrigin="0.48,0.478" >
             <Slider.RenderTransform>
 
                 <TransformGroup>
