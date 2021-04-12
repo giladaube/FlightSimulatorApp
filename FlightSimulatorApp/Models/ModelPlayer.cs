@@ -74,7 +74,7 @@ namespace FlightSimulatorApp.Models
                 client.connect(server, port); // connect client.
                 while (true) // make sure thread won't die in case of a pauseSimulator.
                 {
-                    while (!stop && Linestep < csvRows.Count)
+                    while (!stop && Linestep < csvRows.Count - 1)
                     {
                         // Wait until it is safe to enter.
                         mut.WaitOne();

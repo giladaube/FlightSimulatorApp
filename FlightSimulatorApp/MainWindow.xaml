@@ -39,48 +39,52 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Background="SkyBlue" Grid.Column="0" Grid.Row="0" Grid.RowSpan="8" Grid.ColumnSpan="1">
-            <Button x:Name="A" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,50,18,0" Background="{x:Null}" BorderThickness="0" Click="Compass_Click" ToolTip="Compass" >
-                <iconPacks:PackIconFontAwesome Kind="CompassSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27" Margin="0"/>
-            </Button>
-            <Button x:Name="B" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" Click="Altimeter_Click" ToolTip="Altimeter">
-                <iconPacks:PackIconFontAwesome Kind="AngleDoubleUpSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
-            </Button>
-            <Button x:Name="C" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" Click="Joystick_Click" ToolTip="Joystick" >
-                <iconPacks:PackIconFontAwesome Kind="BullseyeSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
-            </Button>
-            <Button x:Name="D" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" Click="Speedometer_Click" ToolTip="Speedometer" >
-                <iconPacks:PackIconFontAwesome Kind="TachometerAltSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
-            </Button>
-            <Button x:Name="E" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,20,18,0" BorderThickness="0" Click="RPY_Click" ToolTip="Roll Pitch Yaw" >
-                <iconPacks:PackIconFontAwesome Kind="PlaneSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
-            </Button>
-            <Button x:Name="F" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,20,18,0" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" Click="E_Click" >
-                <iconPacks:PackIconFontAwesome Kind="ChartLineSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
-            </Button>
-            <Button x:Name="btnExit" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,60,18,50" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" Click="btnExit_Click" ToolTip="Exit" Height="24.889" >
-                <iconPacks:PackIconFontAwesome Kind="DoorOpenSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
-            </Button>
-        </StackPanel>
+        <Image Source="Resources\cockpit2.jpg" Grid.ColumnSpan="12" Margin="-1485,-505,-1576,-336.25" Grid.RowSpan="8" />
 
-        <DockPanel x:Name="joyPanel"  Background="LightGray" Grid.Row="2" Grid.RowSpan="3" Grid.Column="5" Grid.ColumnSpan="3">
-            <views:JoystickView HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Viewbox Grid.Column="0" Grid.Row="0" Grid.RowSpan="8" Grid.ColumnSpan="1" Margin="-5,0,0,-0.25">
+            <StackPanel Background="SkyBlue" Grid.Column="0" Grid.Row="0" Grid.RowSpan="8" Grid.ColumnSpan="1" Width="76">
+                <Button x:Name="A" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,50,18,0" Background="{x:Null}" BorderThickness="0" Click="Compass_Click" ToolTip="Compass" >
+                    <iconPacks:PackIconFontAwesome Kind="CompassSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27" Margin="0"/>
+                </Button>
+                <Button x:Name="B" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" Click="Altimeter_Click" ToolTip="Altimeter">
+                    <iconPacks:PackIconFontAwesome Kind="AngleDoubleUpSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+                </Button>
+                <Button x:Name="C" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" Click="Joystick_Click" ToolTip="Joystick" >
+                    <iconPacks:PackIconFontAwesome Kind="BullseyeSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+                </Button>
+                <Button x:Name="D" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" Click="Speedometer_Click" ToolTip="Speedometer" >
+                    <iconPacks:PackIconFontAwesome Kind="TachometerAltSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+                </Button>
+                <Button x:Name="E" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" BorderThickness="0" Click="RPY_Click" ToolTip="Roll Pitch Yaw" >
+                    <iconPacks:PackIconFontAwesome Kind="PlaneSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+                </Button>
+                <Button x:Name="F" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,25,18,0" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" Click="E_Click" >
+                    <iconPacks:PackIconFontAwesome Kind="ChartLineSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+                </Button>
+                <Button x:Name="btnExit" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="18,60,18,50" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" Click="btnExit_Click" ToolTip="Exit" Height="24.889" >
+                    <iconPacks:PackIconFontAwesome Kind="DoorOpenSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="27"/>
+                </Button>
+            </StackPanel>
+        </Viewbox>
+
+        <DockPanel x:Name="joyPanel" Grid.Row="0" Grid.RowSpan="4" Grid.Column="9" Grid.ColumnSpan="3" Margin="10,0,-10,52">
+            <views:JoystickView HorizontalAlignment="Center" VerticalAlignment="Center" Height="166" Margin="0,7,0,-13" Width="270"/>
         </DockPanel>
 
-        <DockPanel x:Name="altPanel" Background="LightGray" Grid.Row="2" Grid.RowSpan="3" Grid.Column="2" Grid.ColumnSpan="3" Visibility="Hidden">
-            <views:AltimeterView HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel x:Name="altPanel" Grid.Row="4" Grid.RowSpan="4" Grid.Column="2" Grid.ColumnSpan="4" Margin="55,4,11,13.5" Visibility="Hidden">
+            <views:AltimeterView VerticalAlignment="Top" Height="121" Margin="0,18,0,0" Width="134" HorizontalAlignment="Center"/>
         </DockPanel>
 
-        <DockPanel x:Name="spePanel" Background="LightGray" Grid.Row="2" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="3" Visibility="Hidden">
-            <views:SpeedometerView HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel x:Name="spePanel" Grid.Row="4" Grid.RowSpan="4" Grid.Column="7" Grid.ColumnSpan="4" Margin="13,4,47,19.5" Visibility="Hidden">
+            <views:SpeedometerView VerticalAlignment="Top" Height="121" Margin="0,18,0,0" Width="134" HorizontalAlignment="Center"/>
         </DockPanel>
 
-        <DockPanel x:Name="comPanel" Background="LightGray" Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="5" Visibility="Hidden">
-            <views:CompassView HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel x:Name="comPanel" Grid.Row="4" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="7" Margin="57,18,31,0" VerticalAlignment="Top" Visibility="Hidden">
+            <views:CompassView HorizontalAlignment="Center" VerticalAlignment="Center" Height="94" Margin="0,-2,0,-22" Width="370"/>
         </DockPanel>
 
-        <DockPanel x:Name="rpyPanel" Background="LightGray" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="7" Visibility="Hidden">
-            <views:RPYView HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel x:Name="rpyPanel" Grid.ColumnSpan="10" Margin="50,21,55,22" Grid.RowSpan="4" Visibility="Hidden" >
+            <views:RPYView HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-33,0,45" Height="157" Width="552" Loaded="RPYView_Loaded"/>
         </DockPanel>
 
         <DockPanel Grid.Row="6" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="11">

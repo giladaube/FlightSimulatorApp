@@ -125,6 +125,7 @@ namespace FlightSimulatorApp
 
         private void Window_Closed(object sender, EventArgs e)
         {
+            MessageBox.Show("Thank you for using our app, see you soon!");
             Application.Current.Shutdown();
         }
 
@@ -138,6 +139,11 @@ namespace FlightSimulatorApp
         {
             Graphs graphs = new Graphs();
             graphs.Show();
+        }
+
+        private void RPYView_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
