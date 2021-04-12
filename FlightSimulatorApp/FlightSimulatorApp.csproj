@@ -328,5 +328,8 @@
   <ItemGroup>
     <Resource Include="Resources\cockpit2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\LinearRegression.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
