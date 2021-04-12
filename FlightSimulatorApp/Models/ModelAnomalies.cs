@@ -37,6 +37,8 @@ namespace FlightSimulatorApp.Models
 
         private MethodInfo drawGraphMethod;
 
+        private MethodInfo getAnomaliesLinestepsMethod;
+
         private object Detector;
 
         private string dllPath;
@@ -102,6 +104,8 @@ namespace FlightSimulatorApp.Models
             lobject = new object[] { csvPath };
             this.detectMethod.Invoke(Detector, lobject);
 
+            // Get the drawGraph method.
+            this.getAnomaliesLinestepsMethod = anomalyDetectorType.GetMethod("GetAnomaliesLinesteps");
 
             // Get the drawGraph method.
             this.drawGraphMethod = anomalyDetectorType.GetMethod("drawGraph");
@@ -120,6 +124,7 @@ namespace FlightSimulatorApp.Models
             object[] lobject = new object[] { selectedAnomalyFeature };
             PlotModel PM = (PlotModel)drawGraphMethod.Invoke(Detector, lobject);
             this.AnomalyPlotModel = PM;
+            List<int> AnomaliesLinesteps = (List<int>)getAnomaliesLinestepsMethod.Invoke(Detector, lobject);
         }
     }
 }

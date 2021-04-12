@@ -9,6 +9,5 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/linearregression.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/mincircle.dll")]
 
 

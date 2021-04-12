@@ -318,6 +318,7 @@ namespace FlightSimulatorApp.Models
 
             for (int i = 0; i < titles.Count; i++)
             {
+                
                 string f1 = titles[i];
                 double maxCorrValue = 0;
                 int mostCorrelativeCol = 0;
