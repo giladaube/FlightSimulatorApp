@@ -140,5 +140,10 @@ namespace FlightSimulatorApp
             Graphs graphs = new Graphs();
             graphs.Show();
         }
+
+        private void RPYView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

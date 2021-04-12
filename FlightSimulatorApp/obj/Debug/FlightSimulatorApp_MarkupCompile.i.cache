@@ -16,5 +16,5 @@ C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\App.xaml
 59136190767
 AppWindow.xaml;MainWindow.xaml;Views\AltimeterView.xaml;Views\Anomalies.xaml;Views\CompassView.xaml;Views\Graphs.xaml;Views\JoystickView.xaml;Views\PlayerView.xaml;Views\RPYView.xaml;Views\SpeedometerView.xaml;Views\UploadWindow.xaml;
 
-True
+False
 

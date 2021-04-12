@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("playback_small.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/cockpit2.jpg")]
 
 
