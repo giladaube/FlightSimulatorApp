@@ -61,7 +61,18 @@ namespace FlightSimulatorApp.Models
             }
         }
         private List<DataPoint> linearRegression;
-
+        public List<DataPoint> LinearRegression
+        {
+            get { return this.linearRegression; }
+            set
+            {
+                if (this.linearRegression != value)
+                {
+                    this.linearRegression = value;
+                    this.NotifyPropertyChanged("LinearRegression");
+                }
+            }
+        }
 
         private List<DataPoint> last300PointsOfSelectedFeature;
         public List<DataPoint> Last300PointsOfSelectedFeature
@@ -244,7 +255,7 @@ namespace FlightSimulatorApp.Models
             Points.Add(new DataPoint(xmin, ymin));
             Points.Add(new DataPoint(xmax, ymax));
 
-            this.linearRegression = Points;
+            this.LinearRegression = Points;
         }
 
 
@@ -307,6 +318,7 @@ namespace FlightSimulatorApp.Models
 
             for (int i = 0; i < titles.Count; i++)
             {
+                
                 string f1 = titles[i];
                 double maxCorrValue = 0;
                 int mostCorrelativeCol = 0;

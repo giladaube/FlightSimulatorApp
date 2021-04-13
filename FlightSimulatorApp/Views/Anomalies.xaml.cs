@@ -46,7 +46,11 @@ namespace FlightSimulatorApp.Views
 
         private void AnomalousPointsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            foreach (var selectedItem in AnomalousPointsListBox.SelectedItems)
+            {
+                int linestep = Convert.ToInt32(selectedItem);
+                this.vm.changeLinestep(linestep);
+            }
         }
     }
 }

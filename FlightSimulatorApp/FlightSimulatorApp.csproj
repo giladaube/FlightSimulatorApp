@@ -328,5 +328,9 @@
   <ItemGroup>
     <Resource Include="Resources\cock.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\LinearRegression.dll" />
+    <Content Include="Resources\MinCircle.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
