@@ -6,8 +6,14 @@ View Model- the View-Model receives the model provided in the main. To that mode
 Model- for the Model we have decided to have a façade that holds Models so the View-Models will know only it. Even though the View-Models are separated we have decided to hold one model for there are some methods that intertwines. More so, the Models need shared data and so each model will know only itself the façade is holding the shared data.
 	Model Player- the model player opens the Flight Gear app, connecting a TCP client to the app and sends data. The user may change the data that it sends (changing pace, exact time etc.) and by chain of command from the View to the View-Model to the Model the model will change the data that is sends accordingly.
 	Model Graphs- the model saves the correlated features in the csv, displays graphs on command from its VM to the user chosen features, and the model calculate the regression line to display.
-	Model Anomalies- the model calculates the anomalies based on a “normal” flight, the anomalies in each corelated features may vary from algorithm to algorithm, therefor the user can upload a DLL to the app to calculate the anomalies based on the chosen library.
-More about the DLL..
+	Model Anomalies- the model calculates the anomalies based on a “normal” flight, the anomalies in each two correlated features may vary from algorithm to algorithm, therefore the user can upload a DLL of his choice to the app to calculate the anomalies based on the chosen library.
+
+Two built-in DLLs are the Linear Regression and the Minimum Enclosing Circle DLLs. They are located in the Resources folder, and are available for use in runtime. 
+The Linear Regression DLL learns the linear regression line of every two correlated features from a "normal flight", and when analyzing an anomalous flight, it detects for every two correlated features which points (If there are any) are too distant from the linear regression line. The maximum distance allowed is based on the farthest point in the "normal" flight data. Points that are too far are colored in red and are considered as anomalous.
+The Minimum Enclosing Circle DLL learns from the "normal" flight data, for every two correlated features, the minimum circle that encloses all of the points created by them. When analyzing the anomalous flight, it checks for every two correalted features if there are any points that are located outside of the circle learned earlier. These points will be considered as anomalous.
+For every DLL, there is an option to jump to the relevant point of time easily, at the bottom-left corner.
+
+
 
 
 The project holds three main folders, in corresponding to the MVVM design pattern. Model folder, View-Model folder, and View folder.
