@@ -1,5 +1,18 @@
 ﻿using System.ComponentModel;
 
+/***
+ * ModelFacade- Facade for the models, a partial class so each individual model will be incharges for a
+ * smaller porttion in the app so the each facade will be the model of the VMs.
+ * The facade is breaked down to 4 smaller facades and the models only know the facade rather then having 
+ * a conniction with each other.
+ * The facade implement IModel which implement INotifyPropertyChanged to notify the relevant ViewModel.
+ * The Models are:
+ *      Opening the FG
+ *      Opening client that connects to FG abd sending the data from the csv
+ *      Keppeng track and changing the correct timestep acording to the user needs
+ *      Calculating and displaying graphs
+ *      Claculating anomalies using algorithm that can be changed
+ * ***/
 
 namespace FlightSimulatorApp.Models
 {
@@ -52,6 +65,7 @@ namespace FlightSimulatorApp.Models
             EndFacade_4();
         }
 
+       
         public void setParserPath(string csvPath, string xmlPath)
         {
             this.csvPath = csvPath;

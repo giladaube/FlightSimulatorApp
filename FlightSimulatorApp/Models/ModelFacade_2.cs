@@ -43,7 +43,7 @@ namespace FlightSimulatorApp.Models
 
         }
 
-
+        // Rechanging the values according to the current time step until stoped.
         public void play()
         {
             new Thread(delegate () {

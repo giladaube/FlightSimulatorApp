@@ -14,11 +14,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/***
+ * AltimeterView- View class, holds a VM to sends command and bind data with its properties.
+ * ***/
+
 namespace FlightSimulatorApp.Views
 {
-    /// <summary>
-    /// Interaction logic for AltimeterView.xaml
-    /// </summary>
+
     public partial class AltimeterView : UserControl
     {
         private ViewModelControls vm;

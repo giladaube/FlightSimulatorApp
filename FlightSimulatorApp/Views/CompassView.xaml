@@ -6,8 +6,16 @@
              xmlns:local="clr-namespace:FlightSimulatorApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="106" d:DesignWidth="343">
-    <Grid Margin="0,0,0.333,0">
+    <Grid Margin="1,0,-0.333,0">
         <Canvas Margin="383.333,126,201.333,-0.333" RenderTransformOrigin="0.5,0.5" Grid.Column="2" Grid.RowSpan="3">
+            <Ellipse
+            Width="85"
+            Height="85"
+            Fill="Gray"
+            Stroke="Black"
+            StrokeThickness="1"
+            Canvas.Left="-256"
+            Canvas.Top="-124" />
 
 
             <Image Source="/Resources/Compass.png" Canvas.Left="-255" Canvas.Top="-124" RenderTransformOrigin="0.5,0.5" Height="85" Width="83">
@@ -20,7 +28,7 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Path x:Name="Path_Copy" Width="1.068" Height="33.046" Canvas.Left="-213.534" Canvas.Top="-107.19" Stretch="Fill" StrokeThickness="0.200002" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFF0000" Data="F1 M 181.552,40.73L 181.35,159.165L 169.35,159.145L 169.552,40.7095L 175.829,12.8846L 181.552,40.73 Z " RenderTransformOrigin="0.5,0.5">
+            <Path x:Name="Path_Copy" Width="1.068" Height="33.046" Canvas.Left="-214.32" Canvas.Top="-106.523" Stretch="Fill" StrokeThickness="0.200002" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFF0000" Data="F1 M 181.552,40.73L 181.35,159.165L 169.35,159.145L 169.552,40.7095L 175.829,12.8846L 181.552,40.73 Z " RenderTransformOrigin="0.5,0.5">
                 <Path.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

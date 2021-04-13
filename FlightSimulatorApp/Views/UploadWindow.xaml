@@ -30,21 +30,21 @@
             <TabItem Header="Welcome" Name="welcomeTab">
                 <Grid Margin="24,10,50,-25.667">
                     <TextBlock FontSize="20" FontWeight="Normal" Margin="24,10,50,10" TextWrapping="Wrap" HorizontalAlignment="Left">
-                        With "FlightSimulation" you can simulate your flight in just a few simple steps.
-                        You will find it very easy to use.
+                        With "FlightSimulation" you can simulate your flight within a few simple steps.
+                        You'll find it very intuitive and easy to use.
                        <LineBreak/>
-                        Hope you enjoy it!
+                        Hope you'll enjoy it!
                         <LineBreak/>
                         <LineBreak/>
-                        So what are you waiting for? just press the button down below and you will be a few minutes from start YOUR OWN SIMULATE.
+                        So, what are you waiting for? Press the button below and in a few moment you can start YOUR OWN SIMULATE DIAGNOSIS.
                         <LineBreak/>
                     </TextBlock>
 
                     <TextBlock Margin="25,297,0,27.667" HorizontalAlignment="Left">
                         <iconPacks:PackIconForkAwesome Kind="Copyright" Height="11" Width="10"/>
-                        Yahel Jacobs, Or Gottman, Tal Klein, Gilad Daube
+                        Gilad Daube, Or Gottman, Yahel Jacobs, Tal Klein
                     </TextBlock>
-                    <Button x:Name="btnWelcome" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="646,290,16.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="btnWelcome_Click" SnapsToDevicePixels="False">
+                    <Button x:Name="btnWelcome" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="652,262,10,27.667" Background="{x:Null}" BorderThickness="0" Click="btnWelcome_Click" SnapsToDevicePixels="False">
                         <iconPacks:PackIconFontAwesome Kind="ChevronCircleRightSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
                     </Button>
 
@@ -54,7 +54,7 @@
             <TabItem Header="Setup" Name="setupTab" >
                 <Grid Margin="24,10,50,-25.667">
                     <TextBlock FontSize="16" TextWrapping="Wrap" Margin="1,24,-1,116" Padding="5,0" HorizontalAlignment="Left">
-                        In order to use "FlightSimulation" application, we need you to install "FlightGear" (don't worry it's free).
+                        For you to use the "FlightSimulation" application, you need to install "FlightGear" (don't worry it's free).
                         <LineBreak/> 
                         You'll find the installation in the following link: 
                         <Hyperlink>https://www.flightgear.org/</Hyperlink>
@@ -64,16 +64,16 @@
                         <LineBreak/>
                     </TextBlock>
                     <TextBlock Name="fgPathCheck" FontSize="16" TextWrapping="Wrap" Margin="1,117,0,125.667" Padding="5,0" HorizontalAlignment="Left" Visibility="Hidden"  >
-                        Now, for a smooth run of the application and the connection with "FlightGear" is stable was need you to add the right path so we can access "FlightGear". Please click on the following button to do so
+                        Now, for a smooth run of the application and the connection with "FlightGear" is stable we ask you to add the right path so we can access "FlightGear". Please click on the following button to do so
                     </TextBlock>
 
                     <TextBlock FontSize="16" TextWrapping="Wrap" Margin="0,195,0,-55.333"  Padding="5,0" HorizontalAlignment="Left">
                     <LineBreak/>
-                        In addition, we need you to copy the XML you would like to work with, into the "FlightGear\Protocol" folder.
+                        In addition, we need you to save a copy of the XML you would like to work with, into the "FlightGear\Protocol" folder.
                     </TextBlock>
 
                     <TextBlock FontSize="11" TextWrapping="Wrap" Margin="1,262,0,-26.333"  Padding="5,0" HorizontalAlignment="Left">
-                        If you want to use the default XML, just copy the "playback_small" file from the installation folder of this app into "FlightGear\Protocol" folder.
+                        If you want to use the default XML, copy the "playback_small" file from the installation folder of this app into "FlightGear\Protocol" folder.
                     </TextBlock>
 
                     <Button x:Name="btnSetupNext" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="646,290,16.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="btnSetupNext_Click" SnapsToDevicePixels="False">
@@ -95,15 +95,15 @@
             <TabItem Header="Import">
                 <Grid Margin="24,10,50,-25.667">
                     <TextBlock FontSize="20" TextWrapping="Wrap" Margin="0,0,0,-23.667" >
-                        Just a few last steps and you are ready to go!
+                        Just a few simple steps before we are ready to go!
                         <LineBreak/>
                         <LineBreak/>
-                        To simulate your flight, we need a CSV file describing all the collected data from the flight.
+                        To simulate your flight, upload a CSV file describing all the collected data from the flight.
                         <LineBreak/>
-                        If you like, you can add an XML file- given us some settings about the provided CSV file. If not, we will use the default XML.
+                        If you like, you can add an XML file- given us some settings about the provided CSV file. If not, a default XML we'll be used.
                         <LineBreak/>
                         <LineBreak/>
-                        Please use the following buttons for that purpose.
+                        Use the following buttons to upload your files.
 
 
                     </TextBlock>
@@ -137,13 +137,13 @@
                     <TextBlock FontSize="20" TextWrapping="Wrap" Margin="4,56,-5.667,-20.667" >
                         <LineBreak/>
                         <LineBreak/>
-                        If you want some guidance, please use the guide here below.
+                        
 
                     </TextBlock>
 
 
                     <Button x:Name="btnDoneStart" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="646,290,16.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="Continue_Button_Click" SnapsToDevicePixels="False">
-                        <iconPacks:PackIconFontAwesome Kind="ChevronCircleRightSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
+                        <iconPacks:PackIconFontAwesome Kind="ChevronCircleRightSolid" Foreground="Green" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="62" Margin="0"/>
                     </Button>
 
                     <Button x:Name="btnDoneBack" Style="{DynamicResource MahApps.Styles.Button.Circle}" Margin="573,290,89.333,-0.667" Background="{x:Null}" BorderThickness="0" Click="btnDoneBack_Click" SnapsToDevicePixels="False">

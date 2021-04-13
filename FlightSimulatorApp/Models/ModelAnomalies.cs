@@ -7,6 +7,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
+/***
+ * AnomaliesModel- The model recives a DLL of anomalies detactor algorithm and displayer using
+ * it to mark save the anomalies points in the data.
+ * ***/
+
 namespace FlightSimulatorApp.Models
 {
     class ModelAnomalies : Notify

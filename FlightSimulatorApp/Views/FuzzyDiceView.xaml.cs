@@ -1,6 +1,7 @@
 ﻿using FlightSimulatorApp.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 /***
- * CompassView- View class, holds a VM to sends command and bind data with its properties.
+ * FuzzyDiceView- View class, holds a VM to sends command and bind data with its properties.
  * ***/
 
 namespace FlightSimulatorApp.Views
@@ -23,14 +24,31 @@ namespace FlightSimulatorApp.Views
     /// <summary>
     /// Interaction logic for CompassView.xaml
     /// </summary>
-    public partial class CompassView : UserControl
+    public partial class FuzzyDiceView : UserControl
     {
         private ViewModelControls vm;
-        public CompassView()
+        public FuzzyDiceView()
         {
             InitializeComponent();
             this.vm = new ViewModelControls(MainWindow.getModel());
             this.DataContext = this.vm;
+        }
+    }
+
+    public class MyConverter : IValueConverter
+    {
+
+        public object Convert(object value, Type targetType, 
+            object parameter, CultureInfo culture)
+        {
+            return (float)value / 2;
+        }
+    
+
+        public object ConvertBack(object value, Type targetType, 
+            object parameter, CultureInfo culture)
+        {
+            return null;
         }
     }
 }

@@ -21,6 +21,10 @@ using ControlzEx.Standard;
 using System.Windows.Interop;
 using System.Runtime.InteropServices;
 
+/***
+ * PlayerView- View class, holds a VM to sends command and bind data with its properties.
+ * ***/
+
 namespace FlightSimulatorApp.Views
 {
     /// <summary>

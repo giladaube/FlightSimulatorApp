@@ -17,6 +17,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/***
+ * MainWindow- the Main Window initialize the model facade. Hold instractin logic for the xaml file
+ * and holds each View on screen.
+ * ***/
+
 namespace FlightSimulatorApp
 {
     /// <summary>
@@ -29,7 +34,6 @@ namespace FlightSimulatorApp
 
         private static string fgPath;
 
-        private UserControl u1 = new AltimeterView();
         public static string FgPath
         {
             get { return fgPath; }
@@ -60,7 +64,7 @@ namespace FlightSimulatorApp
             return model;
         }
 
-
+        // display or hide a componnent
         private void Compass_Click(object sender, EventArgs e)
         {
             if (comPanel.Visibility == System.Windows.Visibility.Visible)
@@ -124,6 +128,7 @@ namespace FlightSimulatorApp
         }
 
 
+        
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();

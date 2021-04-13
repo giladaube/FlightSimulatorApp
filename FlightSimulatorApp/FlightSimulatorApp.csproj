@@ -209,6 +209,9 @@
     <Compile Include="Views\CompassView.xaml.cs">
       <DependentUpon>CompassView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FuzzyDiceView.xaml.cs">
+      <DependentUpon>FuzzyDiceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Graphs.xaml.cs">
       <DependentUpon>Graphs.xaml</DependentUpon>
     </Compile>
@@ -252,6 +255,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CompassView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FuzzyDiceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -329,8 +336,9 @@
     <Resource Include="Resources\cock.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\LinearRegression.dll" />
-    <Content Include="Resources\MinCircle.dll" />
+    <Resource Include="Resources\fuzzydice.png" />
+    <Content Include="Plugins\LinearRegression.dll" />
+    <Content Include="Plugins\MinCircle.dll" />
     <SplashScreen Include="Resources\openingScreen.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </SplashScreen>
