@@ -20,4 +20,4 @@ NuGet Packages: MahApps.Metro, MahApp.Metro.IconsPacks, OxyPlot.Core
 .NET framework 4.7.2
 First installment: direction provided in setup window
 
-
+You can find a Demo here: https://github.com/giladaube/FlightSimulatorApp/blob/main/DEMO.mp4
