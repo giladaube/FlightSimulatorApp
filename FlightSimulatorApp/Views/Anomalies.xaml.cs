@@ -1,4 +1,5 @@
 ﻿using FlightSimulatorApp.ViewModels;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace FlightSimulatorApp.Views
     /// <summary>
     /// Interaction logic for Anomalies.xaml
     /// </summary>
-    public partial class Anomalies : Window
+    public partial class Anomalies : MetroWindow
     {
 
         private ViewModelAnomalies vm;
