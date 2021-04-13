@@ -7,10 +7,12 @@
         mc:Ignorable="d"
         Title="Anomalies" Height="750" Width="1000" Loaded="Anomalies_Window_Loaded">
     <Grid Background="LightGreen">
+        <TextBlock HorizontalAlignment="Center" Text="Select a Feature:" Margin="105,14,802.6,686.8" RenderTransformOrigin="0.474,0.633" />
 
-        <ListBox Name="AnomalousPointsListBox" ItemsSource="{Binding VM_AnomalousPointsList}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="AnomalousPointsListBox_SelectionChanged" Margin="20.6,542.3,701.6,9.8" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Center" Text="Anomalous Linesteps" Margin="21,523,717.6,178.8" RenderTransformOrigin="0.474,0.633" />
+        <ListBox Name="AnomalousPointsListBox" ItemsSource="{Binding VM_AnomaliesLinesteps}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="AnomalousPointsListBox_SelectionChanged" Margin="20.6,542.3,701.6,9.8" Grid.Column="1" Grid.Row="1"/>
 
-        <ListBox Name="MyListBox" ItemsSource="{Binding VM_ColNames}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="ListBox_SelectionChanged" Margin="20.6,10,701.6,141.8" Grid.Column="1" Grid.RowSpan="2"/>
+        <ListBox Name="MyListBox" ItemsSource="{Binding VM_ColNames}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="ListBox_SelectionChanged" Margin="21,34,701.6,212.8"/>
 
         <oxy:PlotView x:Name="AnomalyPlot" Model="{Binding VM_AnomalyPlotModel}" Margin="303.6,10,9.6,9.8" Grid.Column="1" Grid.RowSpan="2"/>
  

@@ -37,6 +37,7 @@ namespace FlightSimulatorApp.Models
         // Anomalies Properties
         PlotModel AnomalyPlotModel { get; }
         List<DataPoint> AnomalousPointsList { get; }
+        List<int> AnomaliesLinesteps { get; }
 
 
         // Model COMMANDS
