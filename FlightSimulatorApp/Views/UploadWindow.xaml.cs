@@ -15,13 +15,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using MahApps.Metro.Controls;
 
 namespace FlightSimulatorApp.Views
 {
     /// <summary>
     /// Interaction logic for UploadWindow.xaml
     /// </summary>
-    public partial class UploadWindow : Window
+    public partial class UploadWindow : MetroWindow
     {
         string xmlFilePath;
         string csvFilePath;
@@ -53,6 +54,7 @@ namespace FlightSimulatorApp.Views
             {
                 // Open document 
                 csvFilePath = dlg.FileName;
+                csvPath.Text = csvFilePath;
                 wasCsvSelected = true;
                 btnImportNext.Visibility = System.Windows.Visibility.Visible;
             }
@@ -75,6 +77,7 @@ namespace FlightSimulatorApp.Views
             {
                 // Open document 
                 xmlFilePath = dlg.FileName;
+                xmlPath.Text = xmlFilePath;
                 wasXmlSelected = true;
 
                 // extract the XML name from the given path

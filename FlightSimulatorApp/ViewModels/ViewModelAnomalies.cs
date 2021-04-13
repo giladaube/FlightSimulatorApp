@@ -40,6 +40,11 @@ namespace FlightSimulatorApp.ViewModels
             get { return model.AnomalousPointsList; }
         }
 
+        public List<int> VM_AnomaliesLinesteps
+        {
+            get { return model.AnomaliesLinesteps; }
+        }
+
         public void LoadDLL()
         {
             model.loadDLL();
@@ -48,6 +53,11 @@ namespace FlightSimulatorApp.ViewModels
         public void updateSelectedAnomalyFeature(string feature)
         {
             model.updateSelectedAnomalyFeature(feature);
+        }
+
+        public void changeLinestep(int linestep)
+        {
+            model.changeTimestep(linestep / 10);
         }
     }
 }

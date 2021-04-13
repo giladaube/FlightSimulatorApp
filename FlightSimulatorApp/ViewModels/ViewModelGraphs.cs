@@ -54,6 +54,11 @@ namespace FlightSimulatorApp.ViewModels
         {
             get { return model.SelectedGraphFeatureCorrelated; }
         }
+        
+        public List<DataPoint> VM_LinearRegression      
+        {
+            get { return model.LinearRegression; }
+        }
 
 
         // COMMANDS

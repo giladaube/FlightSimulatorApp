@@ -5,53 +5,58 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FlightSimulatorApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="54" d:DesignWidth="454">
-
-    <Grid ScrollViewer.CanContentScroll="True" Margin="0,4,0,-5" >
-        <Viewbox Margin="0,0,405,0" RenderTransformOrigin="0.5,0.5">
-            <Viewbox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="{Binding VM_Roll}"/>
-                    <!--Binded here!!!-->
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Viewbox.RenderTransform>
-            <Image Source="/Resources/Roll.png"/>
-        </Viewbox>
-        <TextBlock Margin="57,22,298,2" Height="31" FontSize="10"><Run Text="Roll (d):"/><Run Text="{Binding VM_Roll, Mode=OneWay}"/></TextBlock>
-
-
-        <Viewbox Margin="139,17,256,11" RenderTransformOrigin="0.5,0.5">
-            <Viewbox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="{Binding VM_Yaw}"/>
-                    <!--Binded here!!!-->
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Viewbox.RenderTransform>
-            <Image Source="/Resources/Yaw.png"/>
-        </Viewbox>
-        <TextBlock Margin="348,21,3,3" Height="31" FontSize="10"><Run Text="Yaw (d):"/><Run Text=" "/><Run Text="{Binding VM_Yaw, Mode=OneWay}"/></TextBlock>
+             d:DesignHeight="150" d:DesignWidth="454">
+    <Viewbox>
+        <Grid ScrollViewer.CanContentScroll="True" Margin="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0*"/>
+            </Grid.RowDefinitions>
+            <Viewbox Margin="28,43,489,64" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{Binding VM_Roll}"/>
+                        <!--Binded here!!!-->
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Viewbox.RenderTransform>
+                <Image Source="/Resources/Roll.png" VerticalAlignment="Center" Height="119" Width="170"/>
+            </Viewbox>
+            <TextBlock Margin="56,172,485,0" Height="31" FontSize="10" VerticalAlignment="Top"><Run Text="Roll (d):"/><Run Text="{Binding VM_Roll, Mode=OneWay}"/></TextBlock>
 
 
-        <Viewbox Margin="299,10,113,4" RenderTransformOrigin="0.5,0.5">
-            <Viewbox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="{Binding VM_Pitch}"/>
-                    <!--Binded here!!!-->
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Viewbox.RenderTransform>
-            <Image Source="/Resources/Pitch.png"/>
-        </Viewbox>
-        <TextBlock Margin="197,22,154,2" Height="31" FontSize="10"><Run Text="Pitch (d):"/><Run Text=" "/><Run Text="{Binding VM_Pitch, Mode=OneWay}"/></TextBlock>
+            <Viewbox Margin="189,19,206,29" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{Binding VM_Yaw}"/>
+                        <!--Binded here!!!-->
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Viewbox.RenderTransform>
+                <Image Source="/Resources/Yaw.png" VerticalAlignment="Center" Height="123" Width="137"/>
+            </Viewbox>
+            <TextBlock Margin="472,172,90,0" Height="31" FontSize="10" VerticalAlignment="Top"><Run Text="Yaw (d):"/><Run Text=" "/><Run Text="{Binding VM_Yaw, Mode=OneWay}"/></TextBlock>
 
 
-    </Grid>
+            <Viewbox Margin="453,46,48,50" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{Binding VM_Pitch}"/>
+                        <!--Binded here!!!-->
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Viewbox.RenderTransform>
+                <Image Source="/Resources/Pitch.png" VerticalAlignment="Center" Height="130" Width="186"/>
+            </Viewbox>
+            <TextBlock Margin="298,172,270,0" Height="31" FontSize="10" VerticalAlignment="Top"><Run Text="Pitch (d):"/><Run Text=" "/><Run Text="{Binding VM_Pitch, Mode=OneWay}"/></TextBlock>
+
+
+        </Grid>
+    </Viewbox>
 </UserControl>

@@ -37,6 +37,8 @@ namespace FlightSimulatorApp.Models
 
         private MethodInfo drawGraphMethod;
 
+        private MethodInfo getAnomaliesLinestepsMethod;
+
         private object Detector;
 
         private string dllPath;
@@ -57,6 +59,19 @@ namespace FlightSimulatorApp.Models
             }
         }
 
+        private List<int> anomaliesLinesteps;
+        public List<int> AnomaliesLinesteps
+        {
+            get { return this.anomaliesLinesteps; }
+            set
+            {
+                if (this.anomaliesLinesteps != value)
+                {
+                    this.anomaliesLinesteps = value;
+                    this.NotifyPropertyChanged("AnomaliesLinesteps");
+                }
+            }
+        }
 
 
 
@@ -70,13 +85,8 @@ namespace FlightSimulatorApp.Models
 
         public void LoadDLL()
         {
-
-            // Use the file name to load the assembly into the current
-            // application domain.
+            // Use the file name to load the assembly into the current application domain.
             this.assemblyDLL = Assembly.LoadFile(this.dllPath);
-            //this.assemblyDLL.GetName();
-            //string filename = dllPath.Split('/').Last();
-            //string ClassName = filename.Split('.').First();
 
             string ClassName = System.IO.Path.GetFileNameWithoutExtension(dllPath);
 
@@ -87,7 +97,6 @@ namespace FlightSimulatorApp.Models
             string[] args = { xml };
             this.Detector = Activator.CreateInstance(this.anomalyDetectorType, args);
 
-
             // Get the LearnNormal method.
             this.learnNormalMethod = anomalyDetectorType.GetMethod("LearnNormal");
             // Execute the method.
@@ -95,18 +104,17 @@ namespace FlightSimulatorApp.Models
             object[] lobject = new object[] { csvNormal, 0 };
             learnNormalMethod.Invoke(Detector, lobject);
 
-
             // Get the Detect method.
             this.detectMethod = anomalyDetectorType.GetMethod("Detect");
             // Execute the detect method.
             lobject = new object[] { csvPath };
             this.detectMethod.Invoke(Detector, lobject);
 
+            // Get the drawGraph method.
+            this.getAnomaliesLinestepsMethod = anomalyDetectorType.GetMethod("GetAnomaliesLinesteps");
 
             // Get the drawGraph method.
             this.drawGraphMethod = anomalyDetectorType.GetMethod("drawGraph");
-
-
         }
 
         public void updateSelectedAnomalyFeature(string feature)
@@ -120,6 +128,7 @@ namespace FlightSimulatorApp.Models
             object[] lobject = new object[] { selectedAnomalyFeature };
             PlotModel PM = (PlotModel)drawGraphMethod.Invoke(Detector, lobject);
             this.AnomalyPlotModel = PM;
+            AnomaliesLinesteps = (List<int>)getAnomaliesLinestepsMethod.Invoke(Detector, lobject);
         }
     }
 }
