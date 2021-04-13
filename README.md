@@ -21,3 +21,6 @@ NuGet Packages: MahApps.Metro, MahApp.Metro.IconsPacks, OxyPlot.Core
 First installment: direction provided in setup window
 
 You can find a Demo here: https://github.com/giladaube/FlightSimulatorApp/blob/main/DEMO.mp4
+ALso, UML files:
+https://github.com/giladaube/FlightSimulatorApp/blob/main/UML%20-%20only%20classes.jpg
+https://github.com/giladaube/FlightSimulatorApp/blob/main/UML%20-details.png - with some more details.
