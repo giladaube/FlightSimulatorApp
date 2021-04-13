@@ -56,8 +56,8 @@
                 <StackPanel Orientation="Horizontal" Margin="18,23,18,0">
                     <Button x:Name="copm" Style="{DynamicResource MahApps.Styles.Button}" Background="{x:Null}" BorderThickness="0" Click="Compass_Click" ToolTip="Compass" MinHeight="0" Padding="1" mah:ControlsHelper.FocusBorderBrush="{x:Null}" BorderBrush="{x:Null}" >
                         <Button.Content>
-                            <TextBlock>
-                                <iconPacks:PackIconFontAwesome Kind="CompassSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30" Margin="0"/>
+                            <TextBlock Background="#FF0078D7">
+                                <iconPacks:PackIconFontAwesome Kind="CompassSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30" Margin="0" Background="{x:Null}"/>
                                 <Label Foreground="Black" Content="Flight Direction" FontWeight="Bold" FontSize="14" Margin="10,0,0,0"/>
                             </TextBlock>
                         </Button.Content>
@@ -67,7 +67,7 @@
                 <StackPanel Orientation="Horizontal" Margin="18,25,5,0">
                     <Button x:Name="alti" Style="{DynamicResource MahApps.Styles.Button}" Background="{x:Null}" BorderThickness="0" Click="Altimeter_Click" ToolTip="Altimeter" MinHeight="0" Padding="1" mah:ControlsHelper.FocusBorderBrush="{x:Null}" BorderBrush="{x:Null}">
                         <Button.Content>
-                            <TextBlock>
+                            <TextBlock Background="#FF0078D7">
                                 <iconPacks:PackIconFontAwesome Kind="AngleDoubleUpSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30"/>
                                 <Label Foreground="Black" Content="Altimeter" FontWeight="Bold" FontSize="14" Margin="10,0,0,0"/>
                             </TextBlock>
@@ -78,7 +78,7 @@
                 <StackPanel Orientation="Horizontal" Margin="18,23,5,0">
                     <Button x:Name="joys" Style="{DynamicResource MahApps.Styles.Button}" Background="{x:Null}" BorderThickness="0" Click="Joystick_Click" ToolTip="Joystick" MinHeight="0" Padding="1" mah:ControlsHelper.FocusBorderBrush="{x:Null}" BorderBrush="{x:Null}" >
                         <Button.Content>
-                            <TextBlock>
+                            <TextBlock Background="#FF0078D7">
                                 <iconPacks:PackIconFontAwesome Kind="BullseyeSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30"/>
                                 <Label Foreground="Black" Content="Joystick" FontWeight="Bold" FontSize="14" Margin="10,0,0,0"/>
                             </TextBlock>
@@ -89,7 +89,7 @@
                 <StackPanel Orientation="Horizontal" Margin="18,23,5,0">
                     <Button x:Name="speedo" Style="{DynamicResource MahApps.Styles.Button}" Background="{x:Null}" BorderThickness="0" Click="Speedometer_Click" ToolTip="Speedometer" MinHeight="0" Padding="1" mah:ControlsHelper.FocusBorderBrush="{x:Null}" BorderBrush="{x:Null}" >
                         <Button.Content>
-                            <TextBlock>
+                            <TextBlock Background="#FF0078D7">
                                 <iconPacks:PackIconFontAwesome Kind="TachometerAltSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30"/>
                                 <Label Foreground="Black" Content="Speedometer" FontWeight="Bold" FontSize="14" Margin="10,0,0,0"/>
                             </TextBlock>
@@ -100,7 +100,7 @@
                 <StackPanel Orientation="Horizontal" Margin="18,23,5,0">
                     <Button x:Name="rollpi" Style="{DynamicResource MahApps.Styles.Button}" Background="{x:Null}" BorderThickness="0" Click="RPY_Click" ToolTip="Roll Pitch Yaw" MinHeight="0" Padding="1" mah:ControlsHelper.FocusBorderBrush="{x:Null}" BorderBrush="{x:Null}" >
                         <Button.Content>
-                            <TextBlock>
+                            <TextBlock Background="#FF0078D7">
                                 <iconPacks:PackIconFontAwesome Kind="PlaneSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30"/>
                                 <Label Foreground="Black" Content="Roll, Pitch and Yaw" FontWeight="Bold" FontSize="14" Margin="10,0,0,0"/>
                             </TextBlock>
@@ -111,7 +111,7 @@
                 <StackPanel Orientation="Horizontal" Margin="18,25,5,0">
                     <Button x:Name="gra" Style="{DynamicResource MahApps.Styles.Button}" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" Click="E_Click" ToolTip="Open Graphs" MinHeight="0" Padding="1" mah:ControlsHelper.FocusBorderBrush="{x:Null}" BorderBrush="{x:Null}">
                         <Button.Content>
-                            <TextBlock>
+                            <TextBlock Background="#FF0078D7">
                                 <iconPacks:PackIconFontAwesome Kind="ChartLineSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30"/>
                                 <Label Foreground="Black" Content="Graphs" FontWeight="Bold" FontSize="14" Margin="10,0,0,0"/>
                             </TextBlock>
@@ -122,7 +122,7 @@
                 <StackPanel Orientation="Horizontal" Margin="18,58,18,50">
                     <Button x:Name="ex" Style="{DynamicResource MahApps.Styles.Button}" Background="{x:Null}" UseLayoutRounding="False" BorderThickness="0" Click="btnExit_Click" ToolTip="Exit" Height="24.889" MinHeight="0" Padding="1" mah:ControlsHelper.FocusBorderBrush="{x:Null}" BorderBrush="{x:Null}">
                         <Button.Content>
-                            <TextBlock>
+                            <TextBlock Background="#FF0078D7">
                                 <iconPacks:PackIconFontAwesome Kind="DoorOpenSolid" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30"/>
                                 <Label Foreground="Black" Content="Exit" FontWeight="Bold" FontSize="14" Height="29" Margin="10,0,0,0"/>
                             </TextBlock>
@@ -178,8 +178,8 @@
             <views:CompassView HorizontalAlignment="Center" VerticalAlignment="Center" Height="94" Margin="0,-2,0,-22" Width="370"/>
         </DockPanel>
 
-        <DockPanel x:Name="rpyPanel" Grid.ColumnSpan="10" Margin="50,21,55,22" Grid.RowSpan="4" >
-            <views:RPYView HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-21,0,44" Height="170" Width="583" Visibility="Collapsed"/>
+        <DockPanel x:Name="rpyPanel" Grid.ColumnSpan="10" Margin="50,21,55,22" Grid.RowSpan="4" Visibility="Collapsed">
+            <views:RPYView HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-21,0,44" Height="170" Width="583"/>
         </DockPanel>
 
         <DockPanel Grid.Row="5" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="11" Margin="0,50,0,9">

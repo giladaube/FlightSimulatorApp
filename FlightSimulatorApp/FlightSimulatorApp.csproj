@@ -331,6 +331,9 @@
   <ItemGroup>
     <Content Include="Resources\LinearRegression.dll" />
     <Content Include="Resources\MinCircle.dll" />
+    <SplashScreen Include="Resources\openingScreen.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
