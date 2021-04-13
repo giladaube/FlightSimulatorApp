@@ -13,13 +13,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace FlightSimulatorApp.Views
 {
     /// <summary>
     /// Interaction logic for Graphs.xaml
     /// </summary>
-    partial class Graphs : Window
+    partial class Graphs : MetroWindow
     {
         private ViewModelGraphs vm;
         private bool wasDLLSelected = false;
@@ -78,6 +79,7 @@ namespace FlightSimulatorApp.Views
         private void Window_Closed(object sender, EventArgs e)
         {
             vm.setGraphWindowOpened(false);
+            MainWindow.isGraphOpen = false;
         }
     }
 }

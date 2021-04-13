@@ -1,6 +1,7 @@
 ﻿using FlightSimulatorApp.Models;
 using FlightSimulatorApp.ViewModels;
 using FlightSimulatorApp.Views;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace FlightSimulatorApp
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         // when user enter a path to csv need to use:: setCSVPath(string path); in IModel
         private static IModel model = new ModelFacade();
@@ -125,7 +126,6 @@ namespace FlightSimulatorApp
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            MessageBox.Show("Thank you for using our app, see you soon!");
             Application.Current.Shutdown();
         }
 
@@ -135,15 +135,27 @@ namespace FlightSimulatorApp
             Window_Closed(sender, e);
         }
 
+        public static bool isGraphOpen = false;
         private void E_Click(object sender, RoutedEventArgs e)
         {
-            Graphs graphs = new Graphs();
-            graphs.Show();
+            if (!isGraphOpen)
+            {
+                isGraphOpen = true;
+                Graphs graphs = new Graphs();
+                graphs.Show();
+            }
         }
 
-        private void RPYView_Loaded(object sender, RoutedEventArgs e)
+        private void menu_Click(object sender, RoutedEventArgs e)
         {
-
+            if (WideMenu.Visibility == Visibility.Visible)
+            {
+                WideMenu.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                WideMenu.Visibility = Visibility.Visible;
+            }
         }
     }
 }

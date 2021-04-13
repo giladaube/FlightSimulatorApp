@@ -32,7 +32,7 @@ namespace FlightSimulatorApp.Models
                 }
                 catch (Exception e)
                 {
-                    Debug.WriteLine("TCPCLIENT NOT CONNECTED");
+                    // do nothing, try to connect again.
                 }
             }
         }
@@ -41,7 +41,6 @@ namespace FlightSimulatorApp.Models
         {
             // Send the data through StreamWrite.
             this.srClient.Write(command + "\n");
-            Debug.WriteLine("send line: {s}", command);
         }
 
         public void disconnect()
