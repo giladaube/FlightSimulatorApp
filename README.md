@@ -1,6 +1,10 @@
 # Flight Simulator App
 
-This project is of a flight simulator diagnosis, the app uses Flight-Gear as a projectorr. The project is written in a MVVM design.
+This project is of a flight simulator diagnosis, with the Flight-Gear program as a projector. The project is written in C# and follows the MVVM Design Pattern.
+
+Main Application Window:
+![alt text](https://github.com/giladaube/FlightSimulatorApp/blob/main/homescreen.png)
+
 View- the display is separated into smaller components of views; each individual view holds a View-Model and has its own logic. Command and data binding, if exist, are to the View Model. To have a more professional fill-like we added a setup window to initialize the app. Some of the user stories are opened with side menu (hamburger). 
 View Model- the View-Model receives the model provided in the main. To that model the View-Model sends commands and receive notification from. 
 Model- for the Model we have decided to have a façade that holds Models so the View-Models will know only it. Even though the View-Models are separated we have decided to hold one model for there are some methods that intertwines. More so, the Models need shared data and so each model will know only itself the façade is holding the shared data.
@@ -8,12 +12,17 @@ Model- for the Model we have decided to have a façade that holds Models so the 
 	Model Graphs- the model saves the correlated features in the csv, displays graphs on command from its VM to the user chosen features, and the model calculate the regression line to display.
 	Model Anomalies- the model calculates the anomalies based on a “normal” flight, the anomalies in each two correlated features may vary from algorithm to algorithm, therefore the user can upload a DLL of his choice to the app to calculate the anomalies based on the chosen library.
 
-Two built-in DLLs are the Linear Regression and the Minimum Enclosing Circle DLLs. They are located in the Resources folder, and are available for use in runtime. 
+Graphs Window:
+![alt text](https://github.com/giladaube/FlightSimulatorApp/blob/main/Graphs.png)
+
+
+Two built-in DLLs are the Linear Regression and the Minimum Enclosing Circle DLLs. They are located in the Resources folder, and are available for use during runtime. 
 The Linear Regression DLL learns the linear regression line of every two correlated features from a "normal flight", and when analyzing an anomalous flight, it detects for every two correlated features which points (If there are any) are too distant from the linear regression line. The maximum distance allowed is based on the farthest point in the "normal" flight data. Points that are too far are colored in red and are considered as anomalous.
 The Minimum Enclosing Circle DLL learns from the "normal" flight data, for every two correlated features, the minimum circle that encloses all of the points created by them. When analyzing the anomalous flight, it checks for every two correalted features if there are any points that are located outside of the circle learned earlier. These points will be considered as anomalous.
 For every DLL, there is an option to jump to the relevant point of time easily, at the bottom-left corner.
 
-
+Anomaly Detection DLLs - Linear Regression and Minimum Enclosing Circle:
+![alt text](https://github.com/giladaube/FlightSimulatorApp/blob/main/Anomalies.png)
 
 
 The project holds three main folders, in corresponding to the MVVM design pattern. Model folder, View-Model folder, and View folder.
@@ -30,5 +39,7 @@ You can find a Demo here: https://github.com/giladaube/FlightSimulatorApp/blob/m
 
 Also, UML files:
 
-https://github.com/giladaube/FlightSimulatorApp/blob/main/UML%20-%20only%20classes.jpg
-https://github.com/giladaube/FlightSimulatorApp/blob/main/UML%20-details.png - with some more details.
+![alt text](https://github.com/giladaube/FlightSimulatorApp/blob/main/UML%20-%20only%20classes.jpg)
+
+With some more details:
+![alt text](https://github.com/giladaube/FlightSimulatorApp/blob/main/UML%20-details.png)
