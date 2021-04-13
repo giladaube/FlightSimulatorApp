@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
+/***
+ * GraphModel- The model saves the correlated features in the csv,
+ * shows graphs on command from its VM to the user chosen features and
+ * the model calculate the regression line to display.
+ * ***/
+
 namespace FlightSimulatorApp.Models
 {
     public struct correlatedFeatures

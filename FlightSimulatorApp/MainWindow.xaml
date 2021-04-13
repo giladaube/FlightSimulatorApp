@@ -15,7 +15,7 @@
     <Window.Resources>
 
     </Window.Resources>
-    <Grid Background="White">
+    <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -178,12 +178,16 @@
             <views:CompassView HorizontalAlignment="Center" VerticalAlignment="Center" Height="94" Margin="0,-2,0,-22" Width="370"/>
         </DockPanel>
 
-        <DockPanel x:Name="rpyPanel" Grid.ColumnSpan="10" Margin="50,21,55,22" Grid.RowSpan="4" Visibility="Collapsed">
+        <DockPanel x:Name="rpyPanel" Grid.ColumnSpan="7" Margin="9.333,59,0.333,37.333" Grid.RowSpan="4" Grid.Column="1" Visibility="Collapsed">
             <views:RPYView HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-21,0,44" Height="170" Width="583"/>
         </DockPanel>
 
         <DockPanel Grid.Row="5" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="11" Margin="0,50,0,9">
             <views:PlayerView HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <DockPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="5" Margin="0,-28,0.333,59">
+            <views:FuzzyDiceView HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </DockPanel>
     </Grid>
 </mah:MetroWindow>

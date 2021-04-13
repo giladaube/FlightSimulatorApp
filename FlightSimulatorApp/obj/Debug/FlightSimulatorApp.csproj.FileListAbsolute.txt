@@ -117,6 +117,7 @@ C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\Microso
 C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\OxyPlot.xml
 C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\OxyPlot.Wpf.xml
 C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\bin\Debug\de\MahApps.Metro.resources.dll
+C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.csprojAssemblyReference.cache
 C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\AppWindow.g.cs
 C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\MainWindow.g.cs
 C:\Users\Or\Source\Repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Views\PlayerView.g.cs
@@ -465,4 +466,6 @@ C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\Flig
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.csproj.CopyComplete
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.exe
 C:\Users\gilad\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.pdb
-C:\Users\Or\source\repos\FlightSimulatorApp\FlightSimulatorApp\obj\Debug\FlightSimulatorApp.csprojAssemblyReference.cache
+C:\Users\yahel\Source\Repos\FlightSimulatorApp1\FlightSimulatorApp\obj\Debug\FlightSimulatorApp_Content.g.cs
+C:\Users\yahel\Source\Repos\FlightSimulatorApp1\FlightSimulatorApp\obj\Debug\Views\FuzzyDiceView.g.cs
+C:\Users\yahel\Source\Repos\FlightSimulatorApp1\FlightSimulatorApp\obj\Debug\Views\FuzzyDiceView.baml

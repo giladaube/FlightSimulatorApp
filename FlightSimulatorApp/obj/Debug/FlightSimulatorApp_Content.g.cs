@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/linearregression.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/mincircle.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("plugins/linearregression.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("plugins/mincircle.dll")]
 
 

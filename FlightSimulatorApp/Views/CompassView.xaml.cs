@@ -14,6 +14,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/***
+ * CompassView- View class, holds a VM to sends command and bind data with its properties.
+ * ***/
+
 namespace FlightSimulatorApp.Views
 {
     /// <summary>

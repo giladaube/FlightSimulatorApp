@@ -14,6 +14,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
+/***
+ * Anomalies- View class, holds a VM to sends command and bind data with its properties.
+ * ***/
+
 namespace FlightSimulatorApp.Views
 {
     /// <summary>
@@ -30,6 +34,8 @@ namespace FlightSimulatorApp.Views
             this.vm = new ViewModelAnomalies(MainWindow.getModel());
             DataContext = vm;
         }
+
+
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

@@ -7,6 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/***
+ * ViewModelGraphs- View Model, holds a the model and sending commands it had recived to the model,
+ * notifying changes to the view and holds properties that are binded to view elements. 
+ * This View Model holds a model in charged of the graphs display and the plugins.
+ * ***/
+
 namespace FlightSimulatorApp.ViewModels
 {
     class ViewModelGraphs : Notify
@@ -14,6 +20,7 @@ namespace FlightSimulatorApp.ViewModels
 
         private IModel model;
 
+        // COSTRUCTOR
         public ViewModelGraphs(IModel model)
         {
             this.model = model;
@@ -25,7 +32,7 @@ namespace FlightSimulatorApp.ViewModels
         }
 
 
-
+        // PROPERTIES
         public List<string> VM_ColNames
         {
             get { return this.model.ColNames; }

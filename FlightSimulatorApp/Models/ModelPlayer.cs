@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
+/***
+ * PlayerModel- The model opens the flightgear app, having a client that connects to it and sending the
+ * right data accordingly.
+ * The model recives command from its VM on what data needs to be send.
+ * ***/
+
 namespace FlightSimulatorApp.Models
 {
     class ModelPlayer : Notify

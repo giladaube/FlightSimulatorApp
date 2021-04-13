@@ -6,12 +6,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/***
+ * ViewModelControls- View Model, holds a the model notifying changes to the view and 
+ * holds properties that are binded to view elements. 
+ * This View Model holds a model in charged of the controls display.
+ * ***/
+
 namespace FlightSimulatorApp.ViewModels
 {
 
     class ViewModelControls : Notify
     {
+        // MEMBERS
         private IModel model;
+
+        // PROPERTIES
         public double VM_Altimeter
         {
             get { return model.Altimeter * 0.38; }
@@ -62,6 +71,7 @@ namespace FlightSimulatorApp.ViewModels
             get { return Math.Round(model.Yaw, 4); }
         }
 
+        // CONSTRUCTOR
         public ViewModelControls(IModel model)
         {
             this.model = model;
@@ -72,6 +82,7 @@ namespace FlightSimulatorApp.ViewModels
                 };
         }
 
+        // COMMANDS
         public void play()
         {
             model.play();

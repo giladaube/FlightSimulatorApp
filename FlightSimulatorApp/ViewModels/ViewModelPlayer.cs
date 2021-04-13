@@ -6,12 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/***
+ * ViewModelPlayer- View Model, holds a the model and sending commands it had recived to the model,
+ * notifying changes from to view and holds properties that are binded to view elements. 
+ * This View Model holds a model in charged of the player features.
+ * ***/
+
 namespace FlightSimulatorApp.ViewModels
 {
     class ViewModelPlayer : Notify
     {
+        // MEMBERS
         private IModel model;
 
+        // PROPERTIES
         public double VM_timestep // value sends from View, so it's in seconds.
         {
             get
@@ -38,7 +46,7 @@ namespace FlightSimulatorApp.ViewModels
         }
 
 
-   
+        // CONTRUCTOR
         public ViewModelPlayer(IModel model)
         {
             this.model = model;
@@ -49,6 +57,7 @@ namespace FlightSimulatorApp.ViewModels
                 };
         }
 
+        // COMMANDS
         public void changeRate(double rate)
         {
             model.changeRate(rate);

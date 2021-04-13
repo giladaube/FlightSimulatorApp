@@ -11,23 +11,23 @@
     <Grid Background="LightBlue">
 
 
-        <ListBox Name="MyListBox" ItemsSource="{Binding VM_ColNames}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="ListBox_SelectionChanged" Margin="10,20,544.6,70.4"/>
+        <ListBox Background="Snow" Name="MyListBox" ItemsSource="{Binding VM_ColNames}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="ListBox_SelectionChanged" Margin="10,20,544.6,70.4"/>
 
 
-        <oxy:Plot Title="{Binding VM_SelectedGraphFeature}" Margin="274,20,282.6,344.4">
+        <oxy:Plot  Background="SeaShell" BorderBrush="Lavender" BorderThickness="2" Title="{Binding VM_SelectedGraphFeature}" Margin="274,20,282.6,344.4">
             <oxy:Plot.Series>
                 <oxy:LineSeries ItemsSource="{Binding VM_Last300PointsOfSelectedFeature}"/>
             </oxy:Plot.Series>
         </oxy:Plot>
 
-        <oxy:Plot Title="{Binding VM_SelectedGraphFeatureCorrelated}" Margin="525,20,19.6,344.4">
+        <oxy:Plot  Background="SeaShell" BorderBrush="Lavender" BorderThickness="2" Title="{Binding VM_SelectedGraphFeatureCorrelated}" Margin="525,20,19.333,344.667">
             <oxy:Plot.Series>
                 <oxy:LineSeries ItemsSource="{Binding VM_Last300PointsOfSelectedFeatureCorrelated}"/>
             </oxy:Plot.Series>
         </oxy:Plot>
 
 
-        <oxy:Plot Background="LightBlue" BorderBrush="Lavender" BorderThickness="5" Title="{Binding VM_SelectedGraphFeatureCorrelated}" Margin="274,244,19.333,29.667">
+        <oxy:Plot Background="SeaShell" BorderBrush="Lavender" BorderThickness="2" Title="{Binding VM_SelectedGraphFeatureCorrelated}" Margin="274,244,19.333,29.667">
             <oxy:Plot.Series>
                 <oxy:LineSeries LineStyle="None" MarkerFill="Black" MarkerSize="1" MarkerType="Circle" ItemsSource="{Binding VM_Last300PointsOfSelectedFeatureAsCorrelated}"/>
                 <oxy:LineSeries LineStyle="Solid" ItemsSource ="{Binding VM_LinearRegression}" MarkerFill="Aqua" />
