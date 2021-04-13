@@ -1,4 +1,4 @@
-# fgapp
+# Flight Simulator App
 
 This project is of a flight simulator diagnosis, the app uses Flight-Gear as a projectorr. The project is written in a MVVM design.
 View- the display is separated into smaller components of views; each individual view holds a View-Model and has its own logic. Command and data binding, if exist, are to the View Model. To have a more professional fill-like we added a setup window to initialize the app. Some of the user stories are opened with side menu (hamburger). 
