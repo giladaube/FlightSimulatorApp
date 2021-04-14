@@ -122,5 +122,6 @@ namespace FlightSimulatorApp.Models
             client.disconnect();
             clientThread.Abort();
         }
+        
     }
 }

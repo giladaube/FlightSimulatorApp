@@ -3,9 +3,6 @@ using OxyPlot;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /***
  * ViewModelGraphs- View Model, holds a the model and sending commands it had recived to the model,

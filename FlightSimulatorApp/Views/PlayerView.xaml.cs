@@ -1,25 +1,7 @@
-﻿using FlightSimulatorApp.Models;
-using FlightSimulatorApp.ViewModels;
-using FlightSimulatorApp;
+﻿using FlightSimulatorApp.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Diagnostics;
-using System.Threading;
-using ControlzEx.Standard;
-using System.Windows.Interop;
-using System.Runtime.InteropServices;
 
 /***
  * PlayerView- View class, holds a VM to sends command and bind data with its properties.

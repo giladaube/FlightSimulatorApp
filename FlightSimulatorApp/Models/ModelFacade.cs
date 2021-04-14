@@ -21,6 +21,8 @@ namespace FlightSimulatorApp.Models
         private csvParser parser;
         private string csvPath;
 
+        
+
         // Notify
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propertyName)

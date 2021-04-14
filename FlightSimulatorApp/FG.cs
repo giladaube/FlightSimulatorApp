@@ -1,14 +1,7 @@
-﻿using ControlzEx.Standard;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Interop;
 
 namespace FlightSimulatorApp
 {
@@ -52,21 +45,6 @@ namespace FlightSimulatorApp
             ThreadStart fgThs = new ThreadStart(() => this.fgProcess.Start()); // set thread to start process.
             Thread fgThread = new Thread(fgThs);
             fgThread.Start(); // execute thread and start FG as another process.  
-        }
-
-        public void dockFG(Window parent)
-        {
-            Thread.Sleep(500);
-            IntPtr hWndInsertAfter = new IntPtr(-1); //HWND_TOPMOST (HWND) - 1
-            NativeMethods.SetWindowPos(fgProcess.MainWindowHandle, hWndInsertAfter, 0, 0, Convert.ToInt32(parent.Width), Convert.ToInt32(parent.Height), 0);
-            IntPtr windowHandle = new WindowInteropHelper(parent).Handle;
-            NativeMethods.SetParent(fgProcess.MainWindowHandle, windowHandle);
-
-            NativeMethods.SetWindowLongPtr(fgProcess.MainWindowHandle, (GWL)(int)GWL.STYLE,
-                NativeMethods.GetWindowLongPtr(fgProcess.MainWindowHandle, (GWL)(int)GWL.STYLE));
-
-            NativeMethods.SetWindowPos(fgProcess.MainWindowHandle, IntPtr.Zero, 0, 0, Convert.ToInt32(parent.Height) * 3, Convert.ToInt32(parent.Height) * 2, 0);
-
         }
 
         public void close()

@@ -1,4 +1,5 @@
 ﻿using OxyPlot;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -37,7 +38,8 @@ namespace FlightSimulatorApp.Models
         // Anomalies Properties
         PlotModel AnomalyPlotModel { get; }
         List<DataPoint> AnomalousPointsList { get; }
-        List<int> AnomaliesLinesteps { get; }
+        List<Tuple<int, string>> AnomaliesLinesteps { get; }
+        List<string> AnomaliesTimesteps { get; }
 
 
         // Model COMMANDS
@@ -61,9 +63,11 @@ namespace FlightSimulatorApp.Models
         void setDllPath(string dllPath);
         void LearnNormal();
         void setGraphWindowOpened(bool value);
-
+        
         // ModelAnomalies commands
         void loadDLL();
         void updateSelectedAnomalyFeature(string feature);
+        void changeTimestepByString(string timestep);
+
     }
 }

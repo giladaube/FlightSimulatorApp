@@ -2,12 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
 
 /***
  * GraphModel- The model saves the correlated features in the csv,
@@ -185,7 +180,6 @@ namespace FlightSimulatorApp.Models
         public void setDllPath(string dllPath)
         {
             this.DllPath = dllPath;
-
         }
 
         private void updateGraphs()

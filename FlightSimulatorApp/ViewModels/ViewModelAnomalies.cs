@@ -3,9 +3,6 @@ using OxyPlot;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /***
  * ViewModelAnomalies- View Model, holds a the model and sending commands it had recived to the model,
@@ -49,11 +46,19 @@ namespace FlightSimulatorApp.ViewModels
             get { return model.AnomalousPointsList; }
         }
 
-        public List<int> VM_AnomaliesLinesteps
+        public List<Tuple<int, string>> VM_AnomaliesLinesteps
         {
-            get { 
-
+            get 
+            { 
                 return model.AnomaliesLinesteps; 
+            }
+        }
+
+        public List<string> VM_AnomaliesTimesteps
+        {
+            get
+            {
+                return model.AnomaliesTimesteps;
             }
         }
 
@@ -69,9 +74,9 @@ namespace FlightSimulatorApp.ViewModels
             model.updateSelectedAnomalyFeature(feature);
         }
 
-        public void changeLinestep(int linestep)
+        public void changeTimestepByString(string timestep)
         {
-            model.changeTimestep(linestep / 10);
+            model.changeTimestepByString(timestep);
         }
     }
 }

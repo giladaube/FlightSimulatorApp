@@ -2,10 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 /***
  * AnomaliesModel- The model recives a DLL of anomalies detactor algorithm and displayer using
@@ -64,8 +61,8 @@ namespace FlightSimulatorApp.Models
             }
         }
 
-        private List<int> anomaliesLinesteps;
-        public List<int> AnomaliesLinesteps
+        private List<Tuple<int, string>> anomaliesLinesteps;
+        public List<Tuple<int, string>> AnomaliesLinesteps
         {
             get { return this.anomaliesLinesteps; }
             set
@@ -74,6 +71,20 @@ namespace FlightSimulatorApp.Models
                 {
                     this.anomaliesLinesteps = value;
                     this.NotifyPropertyChanged("AnomaliesLinesteps");
+                }
+            }
+        }
+
+        private List<string> anomaliesTimesteps;
+        public List<string> AnomaliesTimesteps
+        {
+            get { return this.anomaliesTimesteps; }
+            set
+            {
+                if (this.anomaliesTimesteps != value)
+                {
+                    this.anomaliesTimesteps = value;
+                    this.NotifyPropertyChanged("AnomaliesTimesteps");
                 }
             }
         }
@@ -119,7 +130,7 @@ namespace FlightSimulatorApp.Models
             this.getAnomaliesLinestepsMethod = anomalyDetectorType.GetMethod("GetAnomaliesLinesteps");
 
             // Get the drawGraph method.
-            this.drawGraphMethod = anomalyDetectorType.GetMethod("drawGraph");
+            this.drawGraphMethod = anomalyDetectorType.GetMethod("DrawGraph");
         }
 
         public void updateSelectedAnomalyFeature(string feature)
@@ -132,8 +143,38 @@ namespace FlightSimulatorApp.Models
         {
             object[] lobject = new object[] { selectedAnomalyFeature };
             PlotModel PM = (PlotModel)drawGraphMethod.Invoke(Detector, lobject);
+            this.AnomalyPlotModel = null;
+            GC.Collect();
             this.AnomalyPlotModel = PM;
-            AnomaliesLinesteps = (List<int>)getAnomaliesLinestepsMethod.Invoke(Detector, lobject);
+            List<int> list = (List<int>)getAnomaliesLinestepsMethod.Invoke(Detector, lobject);
+            //AnomaliesLinesteps
+            
+            List<Tuple<int,string>> timesteps = new List<Tuple<int, string>>();
+            List<string> timestepsStrings = new List<string>();
+            foreach (int i in list)
+            {
+                int asSeconds = i / 10;
+                int hh = (int)asSeconds / 3600;
+                int mm = (int)asSeconds / 60;
+                int ss = (int)asSeconds - (hh * 3600) - (mm * 60);
+                string timestepstr = String.Format("{0:00}:{1:00}:{2:00}", hh, mm, ss);
+                bool isInList = false;
+                for (int j = 0; j < timesteps.Count; j++)
+                {
+                    if (timesteps[j].Item1 == asSeconds)
+                    {
+                        isInList = true;
+                    }
+                }
+                if (!isInList)
+                {
+                    timesteps.Add(new Tuple<int, string>(asSeconds, timestepstr));
+                    timestepsStrings.Add(timestepstr);
+                }
+            }
+            AnomaliesLinesteps = timesteps;
+            AnomaliesTimesteps = timestepsStrings;
+
         }
     }
 }

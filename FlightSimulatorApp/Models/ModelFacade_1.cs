@@ -104,5 +104,15 @@ namespace FlightSimulatorApp.Models
         {
             player.pause();
         }
+        public void changeTimestepByString(string timestep)
+        {
+            foreach (Tuple<int, string> tuple in AnomaliesLinesteps)
+            {
+                if (tuple.Item2.Equals(timestep))
+                {
+                    changeTimestep(tuple.Item1);
+                }
+            }
+        }
     }
 }

@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FlightSimulatorApp.Models
 {
@@ -42,13 +39,22 @@ namespace FlightSimulatorApp.Models
             anomalies.updateSelectedAnomalyFeature(feature);
         }
 
+        
+
 
         public PlotModel AnomalyPlotModel { get { return anomalies.AnomalyPlotModel; } }
         public List<DataPoint> AnomalousPointsList { get { return anomalies.AnomalousPointsList; } }
 
-        public List<int> AnomaliesLinesteps
+        public List<Tuple<int,string>> AnomaliesLinesteps
         {
             get { return anomalies.AnomaliesLinesteps; }
         }
+        public List<string> AnomaliesTimesteps
+        {
+            get { return anomalies.AnomaliesTimesteps; }
+        }
+
+
+        
     }
 }
