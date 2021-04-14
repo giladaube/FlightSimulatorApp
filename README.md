@@ -27,8 +27,7 @@ For every DLL, there is an option to jump to the relevant point of time easily, 
 **The DLL requirements are as follows:**  
 First, your DLL must be written in C#. Your main class should be called "Algorithm", and the DLL's filename must be the same as the namespace used.  
 
-**Your DLL must have the following methods:**  
-
+**Your DLL must contain the following methods:**  
 **Constructor** - The Constructor should receive a FlightGear XML file path, which has the flight features in it.  
 **LearnNormal** - This method receives a normal flight CSV file path. This is where your dll should do the learning process and set boundaries and thresholds for the anomalies to later be analyzed.  
 **Detect** - This method receives an anomalous flight CSV file path. In this method, you are recommended to check for every two correlated feature if there are any anomalous points that surpassed the threshold, and keep them in a data structure such as a list, to later be drawn on the graph differently from the non-anomalous points.  
@@ -50,7 +49,7 @@ The project holds three main folders, in corresponding to the MVVM design patter
 	View-Model Folder- holds four View-Models that hold as members IModel that the Model facade is extending.
 	View Folder- holds all the view components, each user story there is at least one view. Each view holds as a member a matched View-Model.
 
-**Required Installments:**  
+**Required Installs:**  
 Flight Gear
 NuGet Packages: MahApps.Metro, MahApp.Metro.IconsPacks, OxyPlot.Core
 .NET framework 4.7.2
